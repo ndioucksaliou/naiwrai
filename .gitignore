@@ -1,0 +1,24 @@
+
+# Python stuff
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Virtual Environments
+.venv/
+
+# Vscode Editors
+.vscode/
+.idea
+*.code-workspace
+.history/
+
+# Django stuff:
+local_settings.py
+*.pot
+media/
+
+# Databases
+
+*.sqlite3
