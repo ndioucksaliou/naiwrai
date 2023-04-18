@@ -568,7 +568,6 @@ body {
   }
 
   .btn-global-approch {
-	font-family: "Raleway", sans-serif;
     font-weight: 500;
     font-size: 14px;
     letter-spacing: 1px;
@@ -591,7 +590,41 @@ body {
 
   .revolution-digital{
 	background-color: #114e69 !important;
+  }
 
+  .revolution-digital h3 {
+	margin-top: 40px;
+	color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: .02em;
+  }
+
+  .revolution-digital p{
+	font-size: 12pt;
+    color: #ffffff;
+	margin: 40px 0px 35px 34px;
+  }
+
+  .revolution-digital img {
+	margin: 0px 0px 35px 34px;
+  }
+
+  .revolution-digital .btn-revolution {
+	font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 32px;
+	font-weight: 700;
+    border-radius: 50px;
+    transition: 0.5s;
+    line-height: 1;
+    margin: 10px;
+    animation-delay: 0.8s;
+	color: #fff;
+    border: 2px solid #fff;
+    background-color: transparent;
   }
   /* ---------------------------------------------------------------
   # Revolution Digital
