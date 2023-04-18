@@ -504,6 +504,20 @@ body {
 	padding-top: 80px;
   }
   
+  .digitalisation .content {
+	background-color: #114e69 !important;
+	position: relative;
+  }
+
+  .digitalisation .left-color {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background: #f8f8f8;
+  }
+
   h3 {
 	font-size: 30px;
     font-weight: 700;
@@ -512,6 +526,17 @@ body {
 	color: #333;
 	margin-left: 34px;
   }
+
+  /* .digitalisation .logo {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 100%;
+  } */
+
+
   .blue-line {
 	content: "";
 	width: 100px;
@@ -552,7 +577,7 @@ body {
 		color: #114e69;
   }
 
-  .digi-global-approch p{
+  .digi-global-approch h3{
 	margin-left: 34px;
 	font-style: italic;
   }
@@ -563,8 +588,11 @@ body {
   }
 
   .digi-global-approch img{
-	margin-left: 34px;
 	height: 130px;
+  }
+
+  .digi-global-approch .float-img{
+	margin-left: 34px;
   }
 
   .btn-global-approch {
@@ -634,6 +662,10 @@ body {
 	padding-bottom: 4px;
     font-weight: 300;
     line-height: 1.2;
+	
+  }
+  .white-book h2, p, .btn {
+	margin-left: 30px;
   }
 
   
