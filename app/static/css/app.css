@@ -475,8 +475,6 @@ body {
 	margin: 0 0 5px 0;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-	/* color: #aaaaaa;
-	font-family: "Poppins", sans-serif; */
   }
   
   .section-title h2::after {
@@ -497,35 +495,49 @@ body {
 	color: #2a2c39;
   }
   
-  /*--------------------------------------------------------------
-  # Digitalisation
-  --------------------------------------------------------------*/
-  .digitalisation {
+/*--------------------------------------------------------------
+# Digitalisation
+--------------------------------------------------------------*/
+.digitalisation {
 	padding-top: 80px;
-  }
+}
+
+.b-title-page {
+	margin-bottom: 0;
+	font-size: 44px;
+	font-weight: 600;
+	color: #fff;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+}
   
-  .digitalisation .content {
+.small-desc-text {
+	margin-left:34px;
+	margin-bottom: 10px;
+}
+
+.digitalisation .content {
 	background-color: #114e69 !important;
 	position: relative;
-  }
+}
 
-  .digitalisation .left-color {
+.digitalisation .left-color {
 	position: absolute;
-    top: 0;
-    left: 0;
-    width: 25%;
-    height: 100%;
-    background: #f8f8f8;
-  }
+	top: 0;
+	left: 0;
+	width: 25%;
+	height: 100%;
+	background: #f8f8f8;
+}
 
-  h3 {
+h3 {
 	font-size: 30px;
-    font-weight: 700;
-    letter-spacing: .02em;
-    text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: .02em;
+	text-transform: uppercase;
 	color: #333;
 	margin-left: 34px;
-  }
+}
 
   /* .digitalisation .logo {
 	position: absolute;
@@ -537,16 +549,16 @@ body {
   } */
 
 
-  .blue-line {
+.blue-line {
 	content: "";
 	width: 100px;
 	height: 2.5px;
 	display: inline-block;
 	background: #114e69 !important;
 	margin: 4px 34px;
-  }
+}
   
-  .digitalisation .content .btn-learn-more {
+.digitalisation .content .btn-learn-more {
 	font-family: "Raleway", sans-serif;
 	font-weight: 600;
 	font-size: 14px;
@@ -560,113 +572,154 @@ body {
 	animation-delay: 0.8s;
 	margin-top: 6px;
 	border: 2px solid #ef6603;
-  }
+}
   
-  .digitalisation .content .btn-learn-more:hover {
+.digitalisation .content .btn-learn-more:hover {
 	background: #ef6603;
 	color: #fff;
 	text-decoration: none;
-  }
+}
 
-  /* ---------------------------------------------------------------
-  # Global Approch Digitalisation
-  --------------------------------------------------------------- */
+/* ---------------------------------------------------------------
+	# Global Approch Digitalisation
+--------------------------------------------------------------- */
 
-  .digi-global-approch .cloud-text{
-		font-size: 16px;
-		color: #114e69;
-  }
+.digi-global-approch .cloud-text{
+	font-size: 16px;
+	color: #114e69;
+}
 
-  .digi-global-approch h3{
+.digi-global-approch h3{
 	margin-left: 34px;
-	font-style: italic;
-  }
+}
 
-  .digi-global-approch .app{
+.digi-global-approch strong{
+	color: #000000;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+
+.digi-global-approch .app{
 	font-size: 16px;
 	color: #fc7c1f;
-  }
+}
 
-  .digi-global-approch img{
+.digi-global-approch img{
 	height: 130px;
-  }
+}
 
-  .digi-global-approch .float-img{
+.digi-global-approch .float-img{
 	margin-left: 34px;
-  }
+}
 
-  .btn-global-approch {
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 12px 32px;
-    border-radius: 50px;
-    transition: 0.5s;
-    line-height: 1;
-    margin: 10px;
-    color: #333;
-    animation-delay: 0.8s;
-    border: 2px solid #666666;
-  }
+.btn-global-approch {
+	font-weight: 500;
+	font-size: 14px;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 12px 32px;
+	border-radius: 50px;
+	transition: 0.5s;
+	line-height: 1;
+	margin: 10px;
+	color: #333;
+	animation-delay: 0.8s;
+	border: 2px solid #666666;
+}
 
   
 
-  /* ---------------------------------------------------------------
-  # Revolution Digital
-  --------------------------------------------------------------- */
+/* ---------------------------------------------------------------
+	# Revolution Digital
+--------------------------------------------------------------- */
 
-  .revolution-digital{
+.revolution-digital{
 	background-color: #114e69 !important;
-  }
+}
 
-  .revolution-digital h3 {
-	margin-top: 40px;
-	color: #fff;
-    font-size: 30px;
-    font-weight: 700;
-    letter-spacing: .02em;
-  }
-
-  .revolution-digital p{
-	font-size: 12pt;
-    color: #ffffff;
-	margin: 40px 0px 35px 34px;
-  }
-
-  .revolution-digital img {
-	margin: 0px 0px 35px 34px;
-  }
-
-  .revolution-digital .btn-revolution {
-	font-weight: 500;
-    font-size: 13px;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 12px 32px;
-	font-weight: 700;
-    border-radius: 50px;
-    transition: 0.5s;
-    line-height: 1;
-    margin: 10px;
-    animation-delay: 0.8s;
-	color: #fff;
-    border: 2px solid #fff;
-    background-color: transparent;
-  }
-  /* ---------------------------------------------------------------
-  # Revolution Digital
-  --------------------------------------------------------------- */
-
-  .white-book h2{
+.specific {
 	padding-bottom: 4px;
     font-weight: 300;
     line-height: 1.2;
-	
-  }
-  .white-book h2, p, .btn {
+	color: #fff;
+	letter-spacing: .02em;
+	margin-left: 38px;
+	font-size: 40px;
+}
+
+.revolution-digital h3 {
+	margin-top: 40px;
+	color: #fff;
+	font-size: 30px;
+	font-weight: 700;
+	letter-spacing: .02em;
+}
+
+.revolution-digital p{
+	font-size: 12pt;
+	color: #ffffff;
+	margin: 40px 0px 35px 34px;
+}
+
+.revolution-digital img {
+	margin: 0px 0px 35px 34px;
+}
+
+.revolution-digital .btn-revolution {
+	font-weight: 500;
+	font-size: 13px;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 12px 32px;
+	font-weight: 700;
+	border-radius: 50px;
+	transition: 0.5s;
+	line-height: 1;
+	margin: 10px;
+	animation-delay: 0.8s;
+	color: #fff;
+	border: 2px solid #fff;
+	background-color: transparent;
+}
+
+/* ---------------------------------------------------------------
+# Revolution Digital
+--------------------------------------------------------------- */
+
+.white-book h2{
+	padding-bottom: 4px;
+	font-weight: 300;
+	line-height: 1.2;
+
+}
+.white-book h2, p, .btn {
 	margin-left: 30px;
-  }
+}
+
+/* ---------------------------------------------------------------
+	# Our Mission
+--------------------------------------------------------------- */
+.numeric-transition{
+	padding-top: 50px !important;
+    padding-bottom: 50px !important;
+	background-color: #f8f8f8 !important;
+}
+
+.numeric-transition h2{
+	font-size: 30px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+}
+
+.news-digital {
+	margin: 60px 0;
+}
+
+.news-digital h2 {
+	margin-left: 34px;
+}
+
 
   /*--------------------------------------------------------------
 # Contact

@@ -13,7 +13,7 @@
                 <div class="">
                     <a href="/"><img src="https://newrai.fr/wp-content/uploads/2020/06/NewRai-Logo-2-blanc-1024x245-1.png" alt="" class="img-fluid" style="height: 110px;"></a>
                 </div>
-            <p class="animate__animated fanimate__adeInUp mt-3">{{self.title | richtext }}</p>
+            <p class="animate__animated fanimate__adeInUp mt-3 b-title-page">{{self.title | richtext }}</p>
             <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">EN SAVOIR + </a>
             </div>
         </div>
@@ -45,4 +45,20 @@
 
     </section>
     <!-- End Hero -->
+
+    <section class="digi-global-approch mb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col d-flex flex-column">
+                    <a href="/"><img src="{% static 'images/logo_newrai.png' %}" alt="" class="img-fluid mb-3" style="height: 110px;"></a>
+                    <span class="small-desc-text">Un concept unique :</span>
+                    <h3>{{self.introduction}}</h3>
+                    <span class="blue-line"></span>
+                    <p>
+                        <strong>{{self.desc_of_digital_section | richtext }}</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
