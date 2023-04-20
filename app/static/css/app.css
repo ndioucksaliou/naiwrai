@@ -536,7 +536,6 @@ h3 {
 	letter-spacing: .02em;
 	text-transform: uppercase;
 	color: #333;
-	margin-left: 34px;
 }
 
   /* .digitalisation .logo {
@@ -592,8 +591,10 @@ h3 {
 	color: #114e69;
 }
 
-.digi-global-approch h3{
-	margin-left: 34px;
+.digi-global-approch h2{
+	font-size: 20px;
+	color: #000000;
+	font-weight: 600;
 }
 
 .digi-global-approch strong{
@@ -611,7 +612,9 @@ h3 {
 	height: 130px;
 }
 
-.digi-global-approch .float-img{
+.digi-global-approch .float-img,
+.smal-text-d,
+.news-digital h2,h3{
 	margin-left: 34px;
 }
 
@@ -716,9 +719,18 @@ h3 {
 .news-digital {
 	margin: 60px 0;
 }
+.smal-text-d{
+	font-size: 23px;
+	line-height: 2;
+	color: #000000;
+	font-weight: 600;
+}
 
-.news-digital h2 {
-	margin-left: 34px;
+.smal-text-m{
+	font-size: 44px;
+	padding-bottom: 4px;
+    font-weight: 300;
+    line-height: 1.2;
 }
 
 .digital-app {
