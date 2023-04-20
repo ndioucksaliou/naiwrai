@@ -591,6 +591,10 @@ h3 {
 	color: #114e69;
 }
 
+.news-digital ul,
+.digital-app ul{
+	margin-left: 18px;
+}
 .digi-global-approch h2{
 	font-size: 20px;
 	color: #000000;
