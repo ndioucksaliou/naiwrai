@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags wagtailuserbar %}
+{% load static wagtailcore_tags wagtailimages_tags wagtailuserbar %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,10 +57,10 @@
         
               <nav id="navbar" class="navbar">
                 <ul>
-                  <li><a class="nav-link scrollto active" href="/">ACCUEIL</a></li>
-                  <li><a class="nav-link scrollto" href="/digitalisez-votre-cabinet-comptable">DIGITALISEZ VOTRE CABINET COMPTABLE</a></li>
-                  <li><a class="nav-link scrollto" href="/nos-missions">NOS MISSIONS</a></li>
-                  <li><a class="nav-link scrollto" href="/contactez-nous">CONTACT</a></li>
+                  <li><a class="nav-link scrollto {% if page.slug == 'home' %} active {% endif %}" href="/">ACCUEIL</a></li>
+                  <li><a class="nav-link scrollto {% if page.slug == 'digitalisez-votre-cabinet-comptable' %} active {% endif %}" href="/digitalisez-votre-cabinet-comptable">DIGITALISEZ VOTRE CABINET COMPTABLE</a></li>
+                  <li><a class="nav-link scrollto {% if page.slug == 'nos-missions' %} active {% endif %}" href="/nos-missions">NOS MISSIONS</a></li>
+                  <li><a class="nav-link scrollto {% if page.slug == 'contactez-nous' %} active {% endif %}" href="/contactez-nous">CONTACT</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
               </nav>
