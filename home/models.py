@@ -15,6 +15,13 @@ class Home(models.Model):
         blank=True,
         null=True,
     )
+    image = models.ForeignKey(
+        "wagtailimages.Image",
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE,
+        related_name="+",
+    )
     description = RichTextField(
         blank=True,
         null=True,
@@ -24,6 +31,7 @@ class Home(models.Model):
         MultiFieldPanel(
             [
                 FieldPanel("title"),
+                FieldPanel("image"),
                 FieldPanel("description"),
             ]
         )
@@ -127,6 +135,12 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
         related_name="+",
         on_delete=models.SET_NULL,
     )
+    home_title_project = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        help_text="Ajouter le titre du projet",
+    )
 
     home_desc_project = RichTextField(blank=True)
 
@@ -138,7 +152,12 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
         related_name="+",
         on_delete=models.SET_NULL,
     )
-
+    home_title_novelty = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        help_text="Ajouter le titre de noveauté",
+    )
     home_desc_novelty = RichTextField(blank=True)
 
     # =================== Commitment Section Model ============================
@@ -150,6 +169,12 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
         on_delete=models.SET_NULL,
     )
 
+    home_title_commitment = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        help_text="Ajouter le titre d'engagement",
+    )
     home_desc_commitment = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
@@ -172,14 +197,17 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
 
         # ========= Project Section Panel
         FieldPanel("home_image_project"),
+        FieldPanel("home_title_project"),
         FieldPanel("home_desc_project"),
 
         # ========= Novelty Section Panel
         FieldPanel("home_image_novelty"),
+        FieldPanel("home_title_novelty"),
         FieldPanel("home_desc_novelty"),
 
         # ========= Commitment Section Panel
         FieldPanel("home_image_commitment"),
+        FieldPanel("home_title_commitment"),
         FieldPanel("home_desc_commitment"),
 
         InlinePanel("home_placements", label="Home"),
@@ -198,7 +226,10 @@ class DigitalisationPage(Page):  # pylint: disable=too-many-ancestors
         null=True,
     )
 
-    desc_of_digital_section = RichTextField(blank=True)
+    desc_of_digital_section = RichTextField(
+        blank=True,
+        null=True,
+    )
     digital_approch_title = models.CharField(
         max_length=255,
         blank=False,
@@ -214,7 +245,10 @@ class DigitalisationPage(Page):  # pylint: disable=too-many-ancestors
         blank=True,
         null=True,
     )
-    cloud_desc = RichTextField(blank=True)
+    cloud_desc = RichTextField(
+        blank=True,
+        null=True,
+    )
     cloud_right_image = models.ForeignKey(
         "wagtailimages.Image",
         blank=True,
@@ -249,7 +283,10 @@ class DigitalisationPage(Page):  # pylint: disable=too-many-ancestors
         blank=True,
         null=True,
     )
-    app_desc = RichTextField(blank=True)
+    app_desc = RichTextField(
+        blank=True,
+        null=True,
+    )
     first_intro_mission = models.CharField(
         max_length=255,
         blank=True,
@@ -309,7 +346,10 @@ class MissionPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
         blank=False,
         null=True,
     )
-    innovation_approch_desc = RichTextField(blank=True)
+    innovation_approch_desc = RichTextField(
+        blank=True,
+        null=True,
+    )
     innovation_approch_image = models.ForeignKey(
         "wagtailimages.Image",
         blank=True,
@@ -334,7 +374,10 @@ class MissionPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
         blank=False,
         null=True,
     )
-    global_approch_desc = RichTextField(blank=True)
+    global_approch_desc = RichTextField(
+        blank=True,
+        null=True,
+    )
     global_approch_image = models.ForeignKey(
         "wagtailimages.Image",
         blank=True,
@@ -359,7 +402,10 @@ class MissionPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
         blank=False,
         null=True,
     )
-    transition_approch_desc = RichTextField(blank=True)
+    transition_approch_desc = RichTextField(
+        blank=True,
+        null=True,
+    )
     transition_approch_image = models.ForeignKey(
         "wagtailimages.Image",
         blank=True,
@@ -400,17 +446,12 @@ class MissionPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
         verbose_name = "Mission Page"
 
 
-class ContactPage(Page):  # pylint: disable=too-many-ancestors
+class ContactPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
     """The Digitalisation Page model """
-    introduction = models.CharField(
-        max_length=255,
-        blank=False,
-        null=True,
-    )
-    description = RichTextField(blank=False)
+    
     name = models.CharField(
         max_length=255,
-        blank=False,
+        blank=True,
         null=True,
     )
     email = models.EmailField(
@@ -424,7 +465,11 @@ class ContactPage(Page):  # pylint: disable=too-many-ancestors
         blank=False,
         null=True,
     )
-    message = RichTextField(blank=False)
+    message = RichTextField(
+        max_length=255,
+        blank=True,
+        null=True,
+    )
     conatct_image = models.ForeignKey(
         "wagtailimages.Image",
         blank=True,
@@ -435,7 +480,7 @@ class ContactPage(Page):  # pylint: disable=too-many-ancestors
     )
     content_panels = Page.content_panels + [
         FieldPanel("introduction"),
-        FieldPanel("description"),
+        FieldPanel("desc_of_digital_section"),
         FieldPanel("name"),
         FieldPanel("email"),
         FieldPanel("object"),

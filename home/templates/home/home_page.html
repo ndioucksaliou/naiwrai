@@ -5,6 +5,18 @@
     <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
         <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
 
+        <!-- Slide 111  -->
+        <div class="carousel-item">
+            <div class="carousel-container">
+                    <h2 class="animate__animated animate__fadeInDown">Newrai Digitale</h2>
+                    <p class="animate__animated animate__fadeInUp">Newrai Digitale, la plateforme intelligente qui vous permet d’automatiser votre production comptable grâce à des solutions révolutionnaires basées à 100% sur l'IA !
+                        Entrez dans l'ère de la comptabilité automatisée et laissez-nous vous guider vers des résultats exceptionnels sans le moindre effort. 
+                        Bienvenue dans le futur de la comptabilité !
+                        </p>
+                    <a href="" class="btn-get-started animate__animated animate__fadeInUp">EN SAVOIR + </a>
+                
+            </div>
+        </div>
         <!-- Slide 1 -->
         <div class="carousel-item active">
             <div class="carousel-container">
@@ -156,23 +168,23 @@
                 </div>
                 <div class="row">
                     <div class="col-md-5">
-                        {% image self.home_image_vision fill-500x500 %}
-                        <img src="{% static 'images/features-1.svg' %}" class="img-fluid" alt="">
+                        {% image self.home_image_vision fill-451x254 as img %}
+                        <img src="{{img.url}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-7 pt-4">
                         <p class="fst-italic">
                             {{ self.home_desc_vision | richtext }}
                         </p>
-                        <!-- <ul>
-                            <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                            <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                        </ul> -->
                     </div>
                 </div>
     
                 <div class="row">
+                    <div class="section-title">
+                        <h2>{{self.home_title_project}}</h2>
+                    </div>
                     <div class="col-md-5 order-1 order-md-2">
-                        <img src="{% static 'images/features-2.svg' %}" class="img-fluid" alt="">
+                        {% image self.home_image_project fill-451x318 as img %}
+                        <img src="{{img.url}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-7 pt-5 order-2 order-md-1">
                         <p class="fst-italic">
@@ -182,23 +194,25 @@
                 </div>
     
                 <div class="row">
+                    <div class="section-title">
+                        <h2>{{self.home_title_novelty}}</h2>
+                    </div>
                     <div class="col-md-5">
-                    <img src="{% static 'images/features-3.svg' %}" class="img-fluid" alt="">
+                        {% image self.home_image_novelty fill-451x325 as img %}
+                        <img src="{{img.url}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-7 pt-5">
-                    
                         <p>{{self.home_desc_novelty | richtext }}</p>
-                    <!-- <ul>
-                        <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                        <li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
-                    </ul> -->
                     </div>
                 </div>
     
                 <div class="row">
+                    <div class="section-title">
+                        <h2>{{self.home_title_commitment}}</h2>
+                    </div>
                     <div class="col-md-5 order-1 order-md-2">
-                    <img src="{% static 'images/features-4.svg' %}" class="img-fluid" alt="">
+                        {% image self.home_image_commitment fill-451x314 as img %}
+                        <img src="{{img.url}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-7 pt-5 order-2 order-md-1">
                     
