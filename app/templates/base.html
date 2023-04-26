@@ -59,10 +59,10 @@
 
             <nav id="navbar" class="navbar">
               <ul>
-                <li><a class="active " href="/">Accueil</a></li>
+                <li><a class=" {% if page.slug == 'home' %}active {% endif %} " href="/">Accueil</a></li>
                 <li><a href="#">Newrai Digital</a></li>
                 <li><a href="#">Nos applications</a></li>
-                <li><a href="#">Nos missions et services</a></li>
+                <li><a href="#">Offres</a></li>
                 <li><a href="#">Projets</a></li>
                 <li><a href="#">Blog</a></li>
                 <li class="dropdown"><a href="#"><span>A propos de nous</span> <i class="bi bi-chevron-down"></i></a>

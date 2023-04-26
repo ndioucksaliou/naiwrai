@@ -8,6 +8,9 @@ __pycache__/
 # Virtual Environments
 .venv/
 
+# compiled files
+node_modules
+
 # Vscode Editors
 .vscode/
 .idea
