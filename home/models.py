@@ -297,6 +297,20 @@ class ProjectPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
         verbose_name = "Project Page"
 
 
+class VisionPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
+    """The Project Page model """
+
+    content_panels = Page.content_panels + [
+        FieldPanel("introduction"),
+        FieldPanel("image"),
+        FieldPanel("description"),
+    ]
+
+    class Meta:  # pylint: disable=too-few-public-methods
+        """The meta class"""
+        verbose_name = "Vision Page"
+
+
 class ContactPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
     """The Digitalisation Page model """
     name = models.CharField(
