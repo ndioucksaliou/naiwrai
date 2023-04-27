@@ -797,31 +797,30 @@ section {
   }
   
   /*--------------------------------------------------------------
-# About
+# Newrai Digital
 --------------------------------------------------------------*/
-.about h3 {
+.digital h3 {
 	font-weight: 400;
 	font-size: 26px;
-  }
+}
   
-  .about ul {
+.digital ul {
 	list-style: none;
 	padding: 0;
-  }
+}
   
-  .about ul li {
+.digital ul li {
 	padding-bottom: 10px;
-  }
-  
-  .about ul i {
+}
+.digital ul i {
 	font-size: 20px;
 	padding-right: 4px;
 	color: #68A4C4;
-  }
-  
-  .about p:last-child {
+}
+
+.digital p:last-child {
 	margin-bottom: 0;
-  }
+}
   
   /*--------------------------------------------------------------
   # Facts
