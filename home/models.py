@@ -85,7 +85,12 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
     # ==================== Offer Section Model ==================
 
     # ===================== Mission Section Model =========================
-
+    home_title_mission = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        help_text="Ajouter le titre de vision",
+    )
     home_image_mission = models.ForeignKey(
         "wagtailimages.Image",
         blank=True,
@@ -188,6 +193,7 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
         FieldPanel("home_image_logo"),
 
         # ======= Mission Section Pannel
+        FieldPanel("home_title_mission"),
         FieldPanel("home_image_mission"),
         FieldPanel("first_intro_mission"),
         FieldPanel("first_desc_mission"),

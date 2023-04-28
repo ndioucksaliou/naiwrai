@@ -12,7 +12,7 @@
         <ul>
           <li><a class="{% if page.slug == 'home' %}active {% endif %} " href="/">Accueil</a></li>
           <li><a class="{% if page.slug == 'newrai-digital' %} active {% endif %}" href="/newrai-digital">Newrai Digital</a></li>
-          <li><a href="#">Nos Applications</a></li>
+          <li><a class="{% if page.slug == 'nos-applications' %}active{% endif %}" href="/nos-applications">Nos Applications</a></li>
           <li><a class="{% if page.slug == 'nos-missions' %} active {% endif %}" href="/nos-missions">Nos Missions</a></li>
           <li class="dropdown"><a href="#"><span>Nos Offres</span><i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -25,7 +25,6 @@
             <ul>
               <li><a class="{% if page.slug == '/notre-vision' %}active{% endif %}" href="/notre-vision">Notre vision</a></li>
               <li><a class="{% if page.slug == '/nos-projets' %}active {% endif %}" href="/nos-projets">Projets</a></li>
-              <li><a href="#"><span>Equipe</span></a></li>
               <li><a href="#">Evénement</a></li>
               <li><a href="#">Témoignages</a></li>
             </ul>

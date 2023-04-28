@@ -63,6 +63,9 @@
         <section class="services">
             <div class="container">
                 <div class="row">
+                    <div class="section-title">
+                        <h2>Nos offres</h2>
+                    </div>
                     <!-- {% for home_placement in self.home_placements.all %} -->
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
                         <div class="icon-box icon-box-pink">
@@ -122,6 +125,9 @@
         <section class="why-us section-bg" date-aos-delay="200">
             <div class="container">
                 <div class="row">
+                    <div class="section-title">
+                        <h2>{{self.home_title_mission}}</h2>
+                    </div>
                     <div class="col-lg-6 video-box">
                         {% image self.home_image_mission max-546x410 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
@@ -148,11 +154,11 @@
         <!-- ======= Features Section ======= -->
         <section class="features">
             <div class="container">
-                <div class="section-title">
-                    <h2>{{self.home_title_vision}}</h2>
-                    <p>{{self.home_intro_vision}}</p>
-                </div>
                 <div class="row">
+                    <div class="section-title">
+                        <h2>{{self.home_title_vision}}</h2>
+                        <p>{{self.home_intro_vision}}</p>
+                    </div>
                     <div class="col-md-5">
                         {% image self.home_image_vision fill-451x254 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
