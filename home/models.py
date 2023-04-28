@@ -85,6 +85,7 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
     # ==================== Offer Section Model ==================
 
     # ===================== Mission Section Model =========================
+
     home_image_mission = models.ForeignKey(
         "wagtailimages.Image",
         blank=True,
@@ -131,7 +132,7 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
 
     home_desc_vision = RichTextField(blank=True)
 
-    # ====================== Project Section Model =============================
+    # ====================== Project Section Model ============================
     home_image_project = models.ForeignKey(
         "wagtailimages.Image",
         blank=True,
@@ -230,6 +231,13 @@ class DigitalisationPage(Page):  # pylint: disable=too-many-ancestors
         null=True,
         help_text='Entrer votre introduction',
     )
+    logo = models.ForeignKey(
+        "wagtailimages.Image",
+        blank=True,
+        null=True,
+        related_name="+",
+        on_delete=models.SET_NULL,
+    )
     image = models.ForeignKey(
         "wagtailimages.Image",
         blank=True,
@@ -245,6 +253,7 @@ class DigitalisationPage(Page):  # pylint: disable=too-many-ancestors
     )
 
     content_panels = Page.content_panels + [
+        FieldPanel("logo"),
         FieldPanel("introduction"),
         FieldPanel("image"),
         FieldPanel("description"),
@@ -270,6 +279,7 @@ class MissionPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
     )
 
     content_panels = Page.content_panels + [
+        FieldPanel("logo"),
         FieldPanel("image"),
         FieldPanel("introduction"),
         FieldPanel("description"),
@@ -288,6 +298,7 @@ class ProjectPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
 
     content_panels = Page.content_panels + [
         # FieldPanel("introduction"),
+        FieldPanel("logo"),
         FieldPanel("image"),
         FieldPanel("description"),
     ]
@@ -301,6 +312,7 @@ class VisionPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
     """The Project Page model """
 
     content_panels = Page.content_panels + [
+        FieldPanel("logo"),
         FieldPanel("introduction"),
         FieldPanel("image"),
         FieldPanel("description"),
@@ -342,6 +354,7 @@ class ContactPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
         help_text='Choisir votre contact image',
     )
     content_panels = Page.content_panels + [
+        FieldPanel("logo"),
         FieldPanel("introduction"),
         FieldPanel("description"),
         FieldPanel("name"),

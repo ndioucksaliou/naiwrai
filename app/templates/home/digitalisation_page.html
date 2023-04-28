@@ -6,17 +6,32 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
         <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
-
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
+        <!-- Block Slide -->
+        <div class="carousel-item active mt-3">
             <div class="carousel-container">
                 <div class="">
-                    <a href="/"><img src="https://newrai.fr/wp-content/uploads/2020/06/NewRai-Logo-2-blanc-1024x245-1.png" alt="" class="img-fluid" style="height: 110px;"></a>
+                    {% image self.logo fill-460x110 as img %}
+                    <a href="/"><img src="{{img.url}}" alt="" class="img-fluid"></a>
                 </div>
-            <p class="animate__animated fanimate__adeInUp mt-3 b-title-page">{{self.title | richtext }}</p>
-            <!-- <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">EN SAVOIR + </a> -->
+                <p class="animate__animated fanimate__adeInUp mt-3">{{self.description | richtext }}</p>
+                <a href="/digitalisez-votre-cabinet-comptable" class="btn-get-started animate__animated animate__fadeInUp scrollto">EN SAVOIR + </a>
             </div>
         </div>
+
+        <!-- Slide 2 -->
+        {% for home_placement in self.home_placements.all  %}
+            <div class="carousel-item mt-3">
+                <div class="carousel-container">
+                        <div class="">
+                            {% image home_placement.home.image fill-460x110 as img %}
+                            <a href="/"><img src="{{img.url}}" alt="" class="img-fluid"></a>
+                        </div>
+                        <p class="animate__animated animate__fadeInUp">{{ home_placement.home.description | richtext }}</p>
+                        <a href="" class="btn-get-started animate__animated animate__fadeInUp">EN SAVOIR + </a>
+                    
+                </div>
+            </div>
+        {% endfor %}
 
         <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
             <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
@@ -46,38 +61,25 @@
     </section>
     <!-- End Hero -->
     <main id="main">
-        <!-- ======= Why Us Section ======= -->
-        <section class="why-us section-bg" date-aos-delay="200">
+        <!-- =======Newrai Digital Section ======= -->
+        <section class="digital">
             <div class="container">
+                <div class="section-title">
+                    <h2>{{self.title}}</h2>
+                </div>
                 <div class="row">
-                    <div class="section-title mt-3">
-                        <h2>{{self.title}}</h2>
-                    </div>
-                    <div class="col-lg-6 video-box">
-                        {% image self.image max-546x410 as img %}
+                    <div class="col-lg-6">
+                        {% image self.image fill-546x410 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
-                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
                     </div>
-        
-                    <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
-        
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                        <h4 class="title">{{self.introduction}}</h4>
-                        <p class="description">{{self.description | richtext}}</p>
-                    </div>
-        
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-gift"></i></div>
-                        <h4 class="title"><a href="">{{self.second_intro}}</a></h4>
-                        <p class="description">{{self.second_desc | richtext}}</p>
-                    </div>
-        
+                    <div class="col-lg-6 pt-4 pt-lg-0">
+                        <p class="fst-italic">
+                            {{ self.description | richtext }}
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- End Why Us Section -->
+        </section><!-- End Newrai Digital Section -->
     </main>
 
 {% endblock %}

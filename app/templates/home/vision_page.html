@@ -11,7 +11,8 @@
         <div class="carousel-item active">
             <div class="carousel-container">
                 <div class="">
-                    <a href="/"><img src="https://newrai.fr/wp-content/uploads/2020/06/NewRai-Logo-2-blanc-1024x245-1.png" alt="" class="img-fluid" style="height: 110px;"></a>
+                    {% image self.logo fill-460x110 as img %}
+                    <a href="/"><img src="{{img.url}}" alt="" class="img-fluid"></a>
                 </div>
             <p class="animate__animated fanimate__adeInUp mt-3 b-title-page">{{self.title | richtext }}</p>
             <!-- <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">EN SAVOIR + </a> -->
@@ -52,12 +53,13 @@
                 <div class="row">
                     <div class="section-title">
                         <h2>{{self.title}}</h2>
+                        <p>{{self.introduction}}</p>
                     </div>
-                    <div class="col-md-5 order-1 order-md-2">
-                        {% image self.image fill-451x318 as img %}
+                    <div class="col-md-5">
+                        {% image self.image fill-451x254 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
                     </div>
-                    <div class="col-md-7 pt-5 order-2 order-md-1">
+                    <div class="col-md-7 pt-4">
                         <p class="fst-italic">
                             {{ self.description | richtext }}
                         </p>
