@@ -5,6 +5,7 @@ from wagtail.fields import RichTextField
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel, InlinePanel
 from wagtail.snippets.models import register_snippet
 from modelcluster.fields import ParentalKey
+from offer.models import DigitalOfferPage
 
 
 @register_snippet
@@ -65,7 +66,7 @@ class HomePageHomePlacement(Orderable, models.Model):
     def __str__(self):
         return self.page.title + " -> " + self.home.title
 
-    class Meta(Orderable.Meta): # pylint: disable=too-few-public-methods
+    class Meta(Orderable.Meta):  # pylint: disable=too-few-public-methods
         """ The meta model"""
         verbose_name = "home placement"
         verbose_name_plural = "home placements"
@@ -189,40 +190,80 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
 
     content_panels = Page.content_panels + [
         # ======= Hero Section panel
-        FieldPanel("home_description"),
-        FieldPanel("home_image_logo"),
+        InlinePanel("home_placements", label="Home"),
+        MultiFieldPanel(
+            [
+                FieldPanel("home_description", heading="Description"),
+                FieldPanel("home_image_logo", heading="Image Logo"),
+            ],
+            heading="Home",
+        ),
 
         # ======= Mission Section Pannel
-        FieldPanel("home_title_mission"),
-        FieldPanel("home_image_mission"),
-        FieldPanel("first_intro_mission"),
-        FieldPanel("first_desc_mission"),
-        FieldPanel("second_intro_mission"),
-        FieldPanel("second_desc_mission"),
+        MultiFieldPanel(
+            [
+                FieldPanel("home_title_mission", heading="Title"),
+                FieldPanel("home_image_mission", heading="Image"),
+                FieldPanel("first_intro_mission", heading="First Intro"),
+                FieldPanel("first_desc_mission", heading="First Desc"),
+                FieldPanel("second_intro_mission", heading="Second Intro"),
+                FieldPanel("second_desc_mission", heading="Second Desc"),
+            ],
+            heading="Mission",
+
+        ),
 
         # ========= Vision Section Panel
-        FieldPanel("home_image_vision"),
-        FieldPanel("home_title_vision"),
-        FieldPanel("home_intro_vision"),
-        FieldPanel("home_desc_vision"),
+
+        MultiFieldPanel(
+            [
+                FieldPanel("home_image_vision", heading="Image"),
+                FieldPanel("home_title_vision", heading="Title"),
+                FieldPanel("home_intro_vision", heading="Introduction"),
+                FieldPanel("home_desc_vision", heading="Description"),
+            ],
+            heading="Vision",
+            # classname="collapsed",
+        ),
 
         # ========= Project Section Panel
-        FieldPanel("home_image_project"),
-        FieldPanel("home_title_project"),
-        FieldPanel("home_desc_project"),
+
+        MultiFieldPanel(
+            [
+                FieldPanel("home_image_project", heading="Image"),
+                FieldPanel("home_title_project", heading="Title"),
+                FieldPanel("home_desc_project", heading="Description"),
+            ],
+            heading="Project",
+        ),
 
         # ========= Novelty Section Panel
-        FieldPanel("home_image_novelty"),
-        FieldPanel("home_title_novelty"),
-        FieldPanel("home_desc_novelty"),
+        MultiFieldPanel(
+            [
+                FieldPanel("home_image_novelty", heading="Image"),
+                FieldPanel("home_title_novelty", heading="Title"),
+                FieldPanel("home_desc_novelty", heading="Description"),
+            ],
+            heading="Novelty",
+        ),
 
         # ========= Commitment Section Panel
-        FieldPanel("home_image_commitment"),
-        FieldPanel("home_title_commitment"),
-        FieldPanel("home_desc_commitment"),
-
-        InlinePanel("home_placements", label="Home"),
+        MultiFieldPanel(
+            [
+                FieldPanel("home_image_commitment", heading="Image"),
+                FieldPanel("home_title_commitment", heading="Title"),
+                FieldPanel("home_desc_commitment", heading="Description"),
+            ],
+            heading="Commitment",
+        ),
     ]
+
+    def get_context(self, request, *args, **kwargs):
+        """Adding custom stuff to our context."""
+        context = super().get_context(request, *args, **kwargs)
+        apps = DigitalOfferPage.objects.live().public().order_by("-first_published_at")
+        context["apps"] = apps
+        return context
 
     class Meta:  # pylint: disable=too-few-public-methods
         """The meta class"""
