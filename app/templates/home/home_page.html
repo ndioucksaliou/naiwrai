@@ -52,9 +52,22 @@
     </section>
     <!-- End Hero -->
     <main id="main">
+
         <!-- ======= Services Section ======= -->
         <section class="services">
             <div class="container">
+                <div class="row">
+                    <div class="col-md-5 order-1 order-md-2">
+                        {% image self.slogan_image fill-451x318 as img %}
+                        <img src="{{img.url}}" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-7 pt-5 order-2 order-md-1">
+                        <div class="fst-italic" style="font-size: 30px;color: #1e4356;">
+                            {{self.slogan_description | richtext}}
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="section-title">
                         <h2>Nos offres</h2>

@@ -83,6 +83,14 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
         related_name="+",
         on_delete=models.SET_NULL,
     )
+    slogan_description = RichTextField(blank=True)
+    slogan_image = models.ForeignKey(
+        "wagtailimages.Image",
+        blank=True,
+        null=True,
+        related_name="+",
+        on_delete=models.SET_NULL,
+    )
     # ==================== Offer Section Model ==================
 
     # ===================== Mission Section Model =========================
@@ -197,6 +205,14 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
                 FieldPanel("home_image_logo", heading="Image Logo"),
             ],
             heading="Home",
+        ),
+
+        MultiFieldPanel(
+            [
+                FieldPanel("slogan_description", heading="Description"),
+                FieldPanel("slogan_image", heading="Image slogan"),
+            ],
+            heading="Slogan",
         ),
 
         # ======= Mission Section Pannel
