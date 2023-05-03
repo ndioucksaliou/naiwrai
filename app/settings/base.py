@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "search",
     "offer",
     "page",
+    "site_settings",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
