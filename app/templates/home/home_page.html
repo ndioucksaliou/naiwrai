@@ -67,64 +67,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="section-title">
-                        <h2>Nos offres</h2>
-                    </div>
-                    {% for app in apps %}
-                        <div class="col-md-6 col-lg-3 d-flex align-items-stretch bg-light">
-                            {% image app.image fill-200x200 as img %}
-                            <img src="{{img.url}}" class="img-fluid" alt="">
-                            <div class="icon-box {{app.offer_placements.offer.box_class}}">
-                                <div class="icon"><i class="{{app.offer_placements.offer.icon_class}}"></i></div>
-                                <h4 class="title">Teste</h4>
-                                <p class="description">{{app.description | richtext }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-        
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos-delay="100">
-                        <div class="icon-box icon-box-cyan">
-                            <div class="icon"><i class="bx bx-file"></i></div>
-                            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-                        </div>
-                    </div>
-        
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos-delay="200">
-                        <div class="icon-box icon-box-green">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
-                            <h4 class="title"><a href="">Magni Dolores</a></h4>
-                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                        </div>
-                    </div>
-        
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos-delay="200">
-                        <div class="icon-box icon-box-blue">
-                            <div class="icon"><i class="bx bx-world"></i></div>
-                            <h4 class="title"><a href="">Nemo Enim</a></h4>
-                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos-delay="200">
-                        <div class="icon-box icon-box-blue">
-                            <div class="icon"><i class="bx bx-world"></i></div>
-                            <h4 class="title"><a href="">Nemo Enim</a></h4>
-                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos-delay="100">
-                        <div class="icon-box icon-box-cyan">
-                            <div class="icon"><i class="bx bx-file"></i></div>
-                            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-                        </div>
-                    </div>
-        
-                </div>
             </div>
         </section>
         <!-- End Services Section -->
@@ -133,9 +75,6 @@
         <section class="why-us section-bg" date-aos-delay="200">
             <div class="container">
                 <div class="row">
-                    <div class="section-title">
-                        <h2>{{self.home_title_mission}}</h2>
-                    </div>
                     <div class="col-lg-6 video-box">
                         {% image self.home_image_mission max-546x410 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
@@ -143,6 +82,9 @@
                     </div>
         
                     <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+                        <div class="section-title">
+                            <h2>{{self.home_title_mission}}</h2>
+                        </div>
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-fingerprint"></i></div>
                             <h4 class="title">{{self.first_intro_mission}}</h4>
@@ -163,15 +105,16 @@
         <section class="features">
             <div class="container">
                 <div class="row">
-                    <div class="section-title">
-                        <h2>{{self.home_title_vision}}</h2>
-                        <p>{{self.home_intro_vision}}</p>
-                    </div>
+                    
                     <div class="col-md-5">
                         {% image self.home_image_vision fill-451x254 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-7 pt-4">
+                        <div class="section-title">
+                            <h2>{{self.home_title_vision}}</h2>
+                            <p>{{self.home_intro_vision}}</p>
+                        </div>
                         <p class="fst-italic">
                             {{ self.home_desc_vision | richtext }}
                         </p>
@@ -179,47 +122,48 @@
                 </div>
     
                 <div class="row">
-                    <div class="section-title">
-                        <h2>{{self.home_title_project}}</h2>
-                    </div>
+                    
                     <div class="col-md-5 order-1 order-md-2">
                         {% image self.home_image_project fill-451x318 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-7 pt-5 order-2 order-md-1">
+                        <div class="section-title">
+                            <h2>{{self.home_title_project}}</h2>
+                        </div>
                         <p class="fst-italic">
                             {{self.home_desc_project | richtext}}
                         </p>
                     </div>
                 </div>
-    
+
                 <div class="row">
-                    <div class="section-title">
-                        <h2>{{self.home_title_novelty}}</h2>
-                    </div>
-                    <div class="col-md-5">
-                        {% image self.home_image_novelty fill-451x325 as img %}
-                        <img src="{{img.url}}" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-md-7 pt-5">
-                        <p>{{self.home_desc_novelty | richtext }}</p>
-                    </div>
-                </div>
-    
-                <div class="row">
-                    <div class="section-title">
-                        <h2>{{self.home_title_commitment}}</h2>
-                    </div>
                     <div class="col-md-5 order-1 order-md-2">
                         {% image self.home_image_commitment fill-451x314 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-7 pt-5 order-2 order-md-1">
-                    
+                        <div class="section-title">
+                            <h2>{{self.home_title_commitment}}</h2>
+                        </div>
                         <p class="fst-italic">
                             {{self.home_desc_commitment | richtext }}
                         </p>
                     
+                    </div>
+                </div>
+    
+                <div class="row">
+                    
+                    <div class="col-md-5">
+                        {% image self.home_image_novelty fill-451x325 as img %}
+                        <img src="{{img.url}}" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-md-7 pt-5">
+                        <div class="section-title">
+                            <h2>{{self.home_title_novelty}}</h2>
+                        </div>
+                        <p>{{self.home_desc_novelty | richtext }}</p>
                     </div>
                 </div>
             </div>
