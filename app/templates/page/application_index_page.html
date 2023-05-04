@@ -46,23 +46,34 @@
     </section>
     <!-- End Hero -->
     <main id="main">
-        <section class="features">
+        <!-- ======= Application details ======= -->
+        <section class="application-details">
             <div class="container">
                 <div class="row">
-                    <div class="section-title">
-                        <h2>{{self.name}}</h2>
-                    </div>
-                    <div class="col-md-5">
-                        {% image self.image fill-451x254 as img %}
-                        <img src="{{img.url}}" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-md-7 pt-4">
-                        <p class="fst-italic">
-                            {{ self.description | richtext }}
-                        </p>
-                    </div>
+                    
+                    {% for app in apps %}
+                    {% with app=app.specific %}
+                        <div class="section-title mt-3">
+                            <h2 class="text-dark">Hello</h2>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-stretch">
+                            <div class="card">
+                                <div class="card-img">
+                                    {% image app.image fill-400x400 as img %}
+                                    <img src="{{img.url}}" alt="{{app.name}}">
+                                </div>
+                                <div class="card-body">
+                                <!-- <h5 class="card-title"><a href="#">{{app.application.name}}</a></h5> -->
+                                <div class="card-text text-center">{{app.description | richtext}}</div>
+                                <div class="read-more text-center"><a href="{{app.url}}"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endwith %}
+                    {% endfor %}
                 </div>
             </div>
         </section>
+        <!-- End Why Us Section -->
     </main>
 {% endblock %}

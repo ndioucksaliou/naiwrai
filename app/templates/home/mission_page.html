@@ -61,19 +61,13 @@
                     </div>
         
                     <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
-        
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                        <h4 class="title">{{self.introduction}}</h4>
-                        <div class="description">{{self.description | richtext}}</div>
-                    </div>
-        
-                    <div class="icon-box">
-                        <div class="icon"><i class="bx bx-gift"></i></div>
-                        <h4 class="title"><a href="">{{self.second_intro}}</a></h4>
-                        <div class="description">{{self.second_desc | richtext}}</div>
-                    </div>
-        
+                        {% for item in self.items_mission.all %}
+                            <div class="icon-box">
+                                <div class="icon"><i class="bx bx-fingerprint"></i></div>
+                                <h4 class="title">{{item.name}}</h4>
+                                <div class="description">{{item.description | richtext}}</div>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
