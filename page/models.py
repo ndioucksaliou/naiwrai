@@ -1,5 +1,4 @@
 from django.db import models
-from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from wagtail.models import Page
 from wagtail.admin.panels import FieldPanel
 from wagtail.fields import RichTextField
@@ -29,7 +28,8 @@ class ApplicationPage(Page):  # pylint: disable=too-many-ancestors
         "wagtailimages.Image",
         blank=True,
         null=True,
-        on_delete=models.CASCADE, related_name="+"
+        on_delete=models.SET_NULL,
+        related_name="+"
     )
     content_panels = Page.content_panels + [
         FieldPanel("name"),

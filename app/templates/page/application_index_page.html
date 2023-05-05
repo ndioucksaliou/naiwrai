@@ -53,13 +53,11 @@
                     
                     {% for app in apps %}
                     {% with app=app.specific %}
-                        <div class="section-title mt-3">
-                            <h2 class="text-dark">Hello</h2>
-                        </div>
+                        
                         <div class="col-md-6 d-flex align-items-stretch">
                             <div class="card">
                                 <div class="card-img">
-                                    {% image app.image fill-400x400 as img %}
+                                    {% image app.image fill-200x200 as img %}
                                     <img src="{{img.url}}" alt="{{app.name}}">
                                 </div>
                                 <div class="card-body">

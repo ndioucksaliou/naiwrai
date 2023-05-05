@@ -53,10 +53,10 @@
                         <h2>{{self.name}}</h2>
                     </div>
                     <div class="col-md-5">
-                        {% image self.image fill-451x254 as img %}
+                        {% image self.image fill-200x200 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
                     </div>
-                    <div class="col-md-7 pt-4">
+                    <div class="col-md-7 pt-5 order-2 order-md-1">
                         <p class="fst-italic">
                             {{ self.description | richtext }}
                         </p>

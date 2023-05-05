@@ -5,14 +5,17 @@
     <div class="container d-flex justify-content-between align-items-center">
 
       <div class="logo">
-          <a href="/"><img src="{% static 'images/logo.png' %}" alt="Image logo" class="img-fluid"></a>
+          {% if settings.site_settings.HeaderSettings.logo %}
+          {% image settings.site_settings.HeaderSettings.logo fill-210x50 as img %}
+            <a href="/"><img src="{{img.url}}" alt="Image logo" class="img-fluid"></a>
+          {% endif %}
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="{% if page.slug == 'home' %}active {% endif %} " href="/">Accueil</a></li>
           <li><a class="{% if page.slug == 'newrai-digital' %} active {% endif %}" href="/newrai-digital">Newrai</a></li>
-          <li><a class="{% if page.slug == 'nos-applications' %}active{% endif %}" href="/nos-applications">Nos Applications</a></li>
+          <li><a class="{% if page.slug == 'applications' %}active{% endif %}" href="/applications">Nos Applications</a></li>
           <li><a class="{% if page.slug == 'nos-missions' %} active {% endif %}" href="/nos-missions">Nos Missions</a></li>
           <li class="dropdown"><a href="#"><span>Nos Offres</span><i class="bi bi-chevron-down"></i></a>
             <ul>
