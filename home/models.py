@@ -404,6 +404,16 @@ class ContactPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
         blank=False,
         null=True,
     )
+    entreprise = models.CharField(
+        max_length=255,
+        blank=False,
+        null=True,
+    )
+    fonction = models.CharField(
+        max_length=255,
+        blank=False,
+        null=True,
+    )
     message = RichTextField(
         blank=True,
         null=True,
@@ -423,6 +433,8 @@ class ContactPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
         FieldPanel("name"),
         FieldPanel("email"),
         FieldPanel("object"),
+        FieldPanel("entreprise"),
+        FieldPanel("fonction"),
         FieldPanel("message"),
         FieldPanel("conatct_image"),
     ]
