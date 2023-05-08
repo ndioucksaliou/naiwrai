@@ -688,8 +688,8 @@ section {
   }
   
   .why-us .play-btn {
-	width: 94px;
-	height: 94px;
+	width: 140px;
+	height: 140px;
 	background: radial-gradient(#68A4C4 50%, rgba(104, 164, 196, 0.4) 52%);
 	border-radius: 50%;
 	display: block;

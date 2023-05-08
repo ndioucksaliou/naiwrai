@@ -107,6 +107,11 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
         related_name="+",
         on_delete=models.SET_NULL,
     )
+    youtube_url = models.URLField(
+        null=True,
+        blank=True,
+        help_text='Your YouTube channel or user account URL',
+    )
     first_intro_mission = models.CharField(
         max_length=255,
         blank=True,
@@ -220,6 +225,7 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
             [
                 FieldPanel("home_title_mission", heading="Title"),
                 FieldPanel("home_image_mission", heading="Image"),
+                FieldPanel("youtube_url", heading="Lien de la vidéo"),
                 FieldPanel("first_intro_mission", heading="First Intro"),
                 FieldPanel("first_desc_mission", heading="First Desc"),
                 FieldPanel("second_intro_mission", heading="Second Intro"),

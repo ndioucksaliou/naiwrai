@@ -9,14 +9,14 @@
                     <div class="section-title">
                         <h2>{{self.title}}</h2>
                     </div>
-                    <div class="col-md-5">
-                        {% image self.image fill-200x200 as img %}
-                        <img src="{{img.url}}" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-md-7 pt-5 order-2 order-md-1">
+                    <div class="col-md-7 pt-5">
                         <p class="fst-italic">
                             {{ self.description | richtext }}
                         </p>
+                    </div>
+                    <div class="col-md-5">
+                        {% image self.image fill-400x400 as img %}
+                        <img src="{{img.url}}" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
