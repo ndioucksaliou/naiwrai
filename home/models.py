@@ -83,6 +83,12 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
         related_name="+",
         on_delete=models.SET_NULL,
     )
+    slogan_title = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        help_text="Ajouter le titre du slogan",
+    )
     slogan_description = RichTextField(blank=True)
     slogan_image = models.ForeignKey(
         "wagtailimages.Image",
@@ -214,6 +220,7 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
 
         MultiFieldPanel(
             [
+                FieldPanel("slogan_title", heading="Title"),
                 FieldPanel("slogan_description", heading="Description"),
                 FieldPanel("slogan_image", heading="Image slogan"),
             ],

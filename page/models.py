@@ -31,8 +31,14 @@ class ApplicationPage(Page):  # pylint: disable=too-many-ancestors
         on_delete=models.SET_NULL,
         related_name="+"
     )
+    youtube_url = models.URLField(
+        null=True,
+        blank=True,
+        help_text='Your YouTube channel or user account URL',
+    )
     content_panels = Page.content_panels + [
         FieldPanel("name"),
         FieldPanel("description"),
         FieldPanel("image"),
+        FieldPanel("youtube_url"),
     ]

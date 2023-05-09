@@ -952,6 +952,9 @@ section {
   /*--------------------------------------------------------------
 # Application Details
 --------------------------------------------------------------*/
+.top-section {
+	margin-top: 100px;
+}
 .application-details {
 	padding-bottom: 10px;
 }
@@ -981,6 +984,7 @@ section {
 	background: #fff;
 	border-top: 4px solid #fff;
 	/* padding: 30px; */
+	border-radius: 18px;
 	box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 	margin-top: -28px;
 	transition: 0.3s;
@@ -1011,6 +1015,17 @@ section {
   
 .application-details .read-more a:hover {
 	color: #68A4C4;
+}
+
+.top-direction{
+	margin-top: -59px;
+	margin-left: -48px;
+	z-index: 10;
+}
+.btn-light {
+	color: #fff;
+    background: #1e4356;
+	
 }
   
 .application-details .card:hover img {

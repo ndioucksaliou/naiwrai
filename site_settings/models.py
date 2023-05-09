@@ -33,10 +33,27 @@ class HeaderSettings(BaseSiteSetting):
         null=True,
     )
 
-    button_page = blocks.PageChooserBlock(required=True)
+    page_item = StreamField(
+        [
+            (
+                "slide",
+                blocks.StructBlock(
+                    [
+                        ("page", blocks.PageChooserBlock(required=False)),
+                    ]
+                ),
+            ),
+        ],
+        min_num=1,
+        max_num=4,
+        use_json_field=True,
+        blank=True,
+        null=True,
+    )
 
     content_panels = Page.content_panels + [
         FieldPanel("logo"),
         FieldPanel("carousel_item"),
-        FieldPanel("button_page"),
+        FieldPanel("page_item"),
+
     ]

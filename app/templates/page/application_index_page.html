@@ -12,18 +12,22 @@
                     </div>
                     {% for app in apps %}
                     {% with app=app.specific %}
-                        <div class="col-md-6 d-flex align-items-stretch">
-                            <div class="card">
-                                <div class="card-img">
-                                    {% image app.image fill-200x200 as img %}
-                                    <img src="{{img.url}}" alt="{{app.name}}">
+                        <div class="col-md-6 d-flex align-items-center justify-content-center">
+                            <a href="{{app.url}}">
+                                <div class="card">
+                                    <div class="card-img">
+                                        {% image app.image fill-300x300 as img %}
+                                        <img src="{{img.url}}" alt="{{app.name}}">
+                                    </div>
+                                    <div class="row top-direction">
+                                        <div class="col-md-6 offset-md-3">
+                                            <a class="btn btn-light" href="{{ app.url }}">En savoir +</a>
+                                        </div>
+                                    </div>
+                                    
+                                    
                                 </div>
-                                <div class="card-body">
-                                <!-- <h5 class="card-title"><a href="#">{{app.application.name}}</a></h5> -->
-                                <div class="card-text text-center">{{app.description | richtext}}</div>
-                                <div class="read-more text-center"><a href="{{app.url}}"><i class="bi bi-arrow-right"></i> Read More</a></div>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                     {% endwith %}
                     {% endfor %}
