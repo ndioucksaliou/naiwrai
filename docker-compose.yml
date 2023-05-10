@@ -4,6 +4,8 @@ services:
   web:
     build:
       context: .
+      args:
+        GITLAB_PACKAGES_TOKEN: ${GITLAB_PACKAGES_TOKEN}
     command: sh -c "python manage.py migrate && python manage.py runserver 0:8000" 
     volumes:
       - .:/project

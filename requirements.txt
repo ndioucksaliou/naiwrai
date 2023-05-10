@@ -1,3 +1,8 @@
+-i https://user:${GITLAB_PACKAGES_TOKEN}@gitlab.com/api/v4/groups/6922950/-/packages/pypi/simple
+--extra-index-url https://pypi.org/simple
+
+neonumy-core-lib==1.9.4
+
 Django>=4.1,<4.2
 wagtail>=4.2,<4.3
 psycopg2-binary==2.9.6
