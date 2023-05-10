@@ -31,19 +31,10 @@ RUN pip install "gunicorn==20.0.4"
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
 
-# Use /app folder as a directory where the source code is stored.
-WORKDIR /app
-
-# Set this directory to be owned by the "wagtail" user. This Wagtail project
-# uses SQLite, the folder needs to be owned by the user that
-# will be writing to the database file.
-RUN chown wagtail:wagtail /app
+WORKDIR /project
 
 # Copy the source code of the project into the container.
-COPY --chown=wagtail:wagtail . .
-
-# Use user "wagtail" to run the build commands below and the server itself.
-USER wagtail
+COPY . .
 
 # Collect static files.
 RUN python manage.py collectstatic --noinput --clear
