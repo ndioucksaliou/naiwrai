@@ -6,3 +6,7 @@ include:
 test:
   stage: test
   when: manual
+
+migrate:
+  stage: deploy
+  when: manual
