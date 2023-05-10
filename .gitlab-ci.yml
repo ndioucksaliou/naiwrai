@@ -2,3 +2,7 @@ include:
   - project: "neonumy/internal/continuous-integration"
     file: "django.yaml"
     ref: "8.19.1"
+
+test:
+  stage: test
+  when: manual
