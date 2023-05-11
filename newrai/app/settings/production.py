@@ -4,6 +4,8 @@ from .base import *
 
 DEBUG = False
 
+SECRET_KEY = os.environ["SECRET_KEY"]
+
 sentry_sdk.init(
     dsn=os.environ["SENTRY_DSN"],
 
