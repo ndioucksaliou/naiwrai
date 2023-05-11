@@ -11,8 +11,12 @@ APP_SLUG = get_env("APP_SLUG")
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-!1anq!md%#l&42qlju7fgl^e4a9g0+=mzo-pun+j2-p2qj*-ts"
 
+DOMAIN = "newrai.development.neonumy.dev"
+
 # SECURITY WARNING: define the correct hosts in production!
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [DOMAIN]
+
+CSRF_TRUSTED_ORIGINS = [f"https://{DOMAIN}"]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
