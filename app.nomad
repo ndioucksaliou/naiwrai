@@ -118,7 +118,7 @@ job "newrai" {
 
       resources {
         cpu    = 450 # MHz
-        memory = 500 # MB
+        memory = 330 # MB
       }
     }
   }
