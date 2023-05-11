@@ -4,6 +4,8 @@ from .base import *
 
 DEBUG = False
 
+SECRET_KEY = os.environ["SECRET_KEY"]
+
 sentry_sdk.init(
     dsn=os.environ["SENTRY_DSN"],
 
@@ -31,3 +33,12 @@ DATABASES = {
     }
 }
 
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_STORAGE_BUCKET_NAME = "neonumy-uploads-production"
+AWS_S3_ACCESS_KEY_ID = os.environ['AWS_S3_ACCESS_KEY_ID']
+AWS_S3_SECRET_ACCESS_KEY = os.environ['AWS_S3_SECRET_ACCESS_KEY']
+AWS_LOCATION = "newrai"
+AWS_QUERYSTRING_AUTH = False
+AWS_DEFAULT_ACL = "public-read"
+
+AWS_S3_FILE_OVERWRITE = False
