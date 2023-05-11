@@ -6,3 +6,4 @@ neonumy-core-lib==1.9.4
 Django>=4.1,<4.2
 wagtail>=4.2,<4.3
 psycopg2-binary==2.9.6
+sentry-sdk==1.22.2
