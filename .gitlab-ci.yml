@@ -1,12 +1,4 @@
 include:
   - project: "neonumy/internal/continuous-integration"
-    file: "django.yaml"
-    ref: "8.19.1"
-
-test:
-  stage: test
-  when: manual
-
-migrate:
-  stage: deploy
-  when: manual
+    file: "wagtail.yaml"
+    ref: "8.20.0"
