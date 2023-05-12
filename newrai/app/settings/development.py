@@ -4,7 +4,7 @@ from core_lib.config_loader.utils import get_env
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 APP_SLUG = get_env("APP_SLUG")
 
