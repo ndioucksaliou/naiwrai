@@ -14,22 +14,16 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="{% if page.slug == 'home' %}active {% endif %} " href="/">Accueil</a></li>
-          <li><a class="{% if page.slug == 'newrai-digital' %} active {% endif %}" href="/newrai-digital">Newrai</a></li>
+          <li><a class="{% if page.slug == 'newrai' %} active {% endif %}" href="/newrai">Newrai</a></li>
           <li><a class="{% if page.slug == 'applications' %}active{% endif %}" href="/applications">Nos Applications</a></li>
           <li><a class="{% if page.slug == 'nos-missions' %} active {% endif %}" href="/nos-missions">Nos Missions</a></li>
-          <li class="dropdown"><a href="#"><span>Nos Offres</span><i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a class="{% if page.slug == 'offre-digitale' %}active{% endif %}" href="/offre-digitale"><span>Newrai Digital</span></a></li>
-              <li><a href="#">Hébergement cloud</a></li>
-            </ul>
-          </li>
+          <li><a class="{% if page.slug == 'offre' %} active {% endif %}" href="/offre">Nos Offres</a></li>
           <li><a target="_blank" href="https://blog.newrai.fr/">Blog</a></li>
           <li class="dropdown"><a href="#"><span>A propos de nous</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a class="{% if page.slug == 'notre-vision' %}active{% endif %}" href="/notre-vision">Notre vision</a></li>
-              <li><a class="{% if page.slug == 'nos-projets' %}active {% endif %}" href="/nos-projets">Projets</a></li>
-              <li><a href="#">Evénement</a></li>
-              <li><a href="#">Témoignages</a></li>
+              <li><a class="{% if page.slug == 'nos-projets' %}active {% endif %}" href="/nos-projets">Témoignages</a></li>
+              <li><a href="#">Facture électronique</a></li>
             </ul>
           </li>
           <li><a class="{% if page.slug == 'contactez-nous' %}active {% endif %}" href="/contactez-nous">Nous Contacter</a></li>
@@ -41,7 +35,7 @@
   </header>
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
-    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+    <div id="heroCarousel" data-bs-interval="5000" class="container-fluid carousel carousel-fade" style="padding-left: 0;padding-right: 0;">
       <!-- Block Slide -->
       <!-- Slide 1 -->
       <div class="carousel-item active mt-3">
@@ -52,12 +46,16 @@
         </div>
       </div>
       {% for block in settings.site_settings.HeaderSettings.carousel_item %}
-        <div class="carousel-item">
-            <div class="carousel-container">
-              {% include_block block %}
-              <a href="/digitalisez-votre-cabinet-comptable" class="btn-get-started animate__animated animate__fadeInUp scrollto">EN SAVOIR + </a>
-            </div>
-        </div>
+        {% if block.block_type == 'list_items' %}
+        {% image block.value.image width-1200  as img %}
+          <div class="carousel-item" style="background-image: url('{{img.url}}'); background-size: cover; background-repeat: no-repeat;">
+              <div class="carousel-container">
+                  <span style="font-size: 33px;font-weight: 900;">{{ block.value.description }}</span>
+                  <a href="{{block.value.page.url}}" class="btn-get-started animate__animated animate__fadeInUp scrollto" style="font-size: 30px;
+                  font-weight: 900;">EN SAVOIR + </a>
+              </div>
+          </div>
+        {% endif %}
       {% endfor %}
 
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">

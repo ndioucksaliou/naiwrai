@@ -3,6 +3,7 @@ from wagtail.models import Page
 from wagtail import blocks
 from wagtail.admin.panels import FieldPanel
 from wagtail.fields import StreamField
+from wagtail.images.blocks import ImageChooserBlock
 from wagtail.contrib.settings.models import (
     BaseSiteSetting,
     register_setting,
@@ -19,33 +20,19 @@ class HeaderSettings(BaseSiteSetting):
         null=True,
         related_name="+"
     )
-    
+
     carousel_item = StreamField(
         [
-            (
-                "description", blocks.RichTextBlock()
+            ('list_items', blocks.StructBlock(
+                [
+                    ('description', blocks.RichTextBlock()),
+                    ('image', ImageChooserBlock(required=False)),
+                    ("page", blocks.PageChooserBlock(required=False)),
+                ]
+                )
             ),
         ],
-        min_num=2,
-        max_num=4,
-        use_json_field=True,
-        blank=True,
-        null=True,
-    )
-
-    page_item = StreamField(
-        [
-            (
-                "slide",
-                blocks.StructBlock(
-                    [
-                        ("page", blocks.PageChooserBlock(required=False)),
-                    ]
-                ),
-            ),
-        ],
-        min_num=1,
-        max_num=4,
+        max_num=6,
         use_json_field=True,
         blank=True,
         null=True,
@@ -54,6 +41,4 @@ class HeaderSettings(BaseSiteSetting):
     content_panels = Page.content_panels + [
         FieldPanel("logo"),
         FieldPanel("carousel_item"),
-        FieldPanel("page_item"),
-
     ]
