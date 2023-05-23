@@ -72,6 +72,65 @@ class HomePageHomePlacement(Orderable, models.Model):
         verbose_name_plural = "home placements"
 
 
+@register_snippet
+class Trusts(models.Model):
+    """ The home model"""
+    name = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+    )
+    logo = models.ForeignKey(
+        "wagtailimages.Image",
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+
+    panels = [
+        MultiFieldPanel(
+            [
+                FieldPanel("name"),
+                FieldPanel("logo"),
+            ]
+        )
+    ]
+
+    def __str__(self) -> str:
+        return str(self.name)
+
+
+class TrustsPageTrustsPlacement(Orderable, models.Model):
+    """ The home placement """
+    page = ParentalKey(
+        "home.HomePage",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="trusts_items"
+    )
+    trusts = models.ForeignKey(
+        "home.Trusts",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+    )
+
+    panels = [
+        FieldPanel('trusts'),
+    ]
+
+    def __str__(self):
+        return self.page.title + " -> " + self.trusts.name
+
+    class Meta(Orderable.Meta):  # pylint: disable=too-few-public-methods
+        """ The meta model"""
+        verbose_name = "trusts placement"
+        verbose_name_plural = "trusts placements"
+
+
 class HomePage(Page):  # pylint: disable=too-many-ancestors
     """The home page model """
     # ==================== Hero Section Model========================
@@ -285,6 +344,8 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
             ],
             heading="Commitment",
         ),
+        InlinePanel("trusts_items", label="Trusts"),
+
     ]
 
     def get_context(self, request, *args, **kwargs):
@@ -307,13 +368,6 @@ class DigitalisationPage(Page):  # pylint: disable=too-many-ancestors
         null=True,
         help_text='Entrer votre introduction',
     )
-    logo = models.ForeignKey(
-        "wagtailimages.Image",
-        blank=True,
-        null=True,
-        related_name="+",
-        on_delete=models.SET_NULL,
-    )
     image = models.ForeignKey(
         "wagtailimages.Image",
         blank=True,
@@ -329,7 +383,6 @@ class DigitalisationPage(Page):  # pylint: disable=too-many-ancestors
     )
 
     content_panels = Page.content_panels + [
-        FieldPanel("logo"),
         FieldPanel("introduction"),
         FieldPanel("image"),
         FieldPanel("description"),
@@ -355,13 +408,11 @@ class MissionPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
     )
 
     content_panels = Page.content_panels + [
-        FieldPanel("logo"),
         FieldPanel("image"),
         FieldPanel("introduction"),
         FieldPanel("description"),
         FieldPanel("second_intro"),
         FieldPanel("second_desc"),
-
     ]
 
     class Meta:  # pylint: disable=too-few-public-methods
@@ -373,10 +424,9 @@ class ProjectPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
     """The Project Page model """
 
     content_panels = Page.content_panels + [
-        # FieldPanel("introduction"),
-        FieldPanel("logo"),
         FieldPanel("image"),
         FieldPanel("description"),
+
     ]
 
     class Meta:  # pylint: disable=too-few-public-methods
@@ -388,10 +438,10 @@ class VisionPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
     """The Project Page model """
 
     content_panels = Page.content_panels + [
-        FieldPanel("logo"),
         FieldPanel("introduction"),
         FieldPanel("image"),
         FieldPanel("description"),
+
     ]
 
     class Meta:  # pylint: disable=too-few-public-methods
@@ -440,7 +490,6 @@ class ContactPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
         help_text='Choisir votre contact image',
     )
     content_panels = Page.content_panels + [
-        FieldPanel("logo"),
         FieldPanel("introduction"),
         FieldPanel("description"),
         FieldPanel("name"),
