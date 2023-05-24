@@ -343,7 +343,6 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
                 FieldPanel("second_desc_mission", heading="Second Desc"),
             ],
             heading="Mission",
-
         ),
 
         # ========= Vision Section Panel
