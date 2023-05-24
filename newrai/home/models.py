@@ -9,70 +9,6 @@ from offer.models import DigitalOfferPage
 
 
 @register_snippet
-class Home(models.Model):
-    """ The home model"""
-    title = models.CharField(
-        max_length=255,
-        blank=True,
-        null=True,
-    )
-    image = models.ForeignKey(
-        "wagtailimages.Image",
-        blank=True,
-        null=True,
-        on_delete=models.SET_NULL,
-        related_name="+",
-    )
-    description = RichTextField(
-        blank=True,
-        null=True,
-    )
-
-    panels = [
-        MultiFieldPanel(
-            [
-                FieldPanel("title"),
-                FieldPanel("image"),
-                FieldPanel("description"),
-            ]
-        )
-    ]
-
-    def __str__(self) -> str:
-        return str(self.title)
-
-
-class HomePageHomePlacement(Orderable, models.Model):
-    """ The home placement """
-    page = ParentalKey(
-        "home.HomePage",
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name="home_placements"
-    )
-    home = models.ForeignKey(
-        "home.Home",
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-    )
-
-    panels = [
-        FieldPanel('home'),
-    ]
-
-    def __str__(self):
-        return self.page.title + " -> " + self.home.title
-
-    class Meta(Orderable.Meta):  # pylint: disable=too-few-public-methods
-        """ The meta model"""
-        verbose_name = "home placement"
-        verbose_name_plural = "home placements"
-
-
-@register_snippet
 class WhyChooseNewrai(models.Model):
     """ The home model"""
     name = models.CharField(
@@ -109,7 +45,6 @@ class WhyChooseNewrai(models.Model):
 
 class WhyChooseNewraiPageChooseNewraiPlacement(Orderable, models.Model):
     """ The home placement """
-    
     page = ParentalKey(
         "home.HomePage",
         null=True,
@@ -169,7 +104,6 @@ class Trusts(models.Model):
 
 class TrustsPageTrustsPlacement(Orderable, models.Model):
     """ The home placement """
-    
     page = ParentalKey(
         "home.HomePage",
         null=True,
@@ -313,7 +247,6 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
 
     content_panels = Page.content_panels + [
         # ======= Hero Section panel
-        InlinePanel("home_placements", label="Home"),
         MultiFieldPanel(
             [
                 FieldPanel("home_description", heading="Description"),
