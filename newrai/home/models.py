@@ -73,6 +73,72 @@ class HomePageHomePlacement(Orderable, models.Model):
 
 
 @register_snippet
+class WhyChooseNewrai(models.Model):
+    """ The home model"""
+    name = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+    )
+    icon = models.ForeignKey(
+        "wagtailimages.Image",
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    description = RichTextField(
+        null=True,
+        blank=True,
+    )
+
+    panels = [
+        MultiFieldPanel(
+            [
+                FieldPanel("name"),
+                FieldPanel("icon"),
+                FieldPanel("description"),
+
+            ]
+        )
+    ]
+
+    def __str__(self) -> str:
+        return str(self.name)
+
+
+class WhyChooseNewraiPageChooseNewraiPlacement(Orderable, models.Model):
+    """ The home placement """
+    
+    page = ParentalKey(
+        "home.HomePage",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="whychoosenewrai_items"
+    )
+    whychoosenewrai = models.ForeignKey(
+        "home.WhyChooseNewrai",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+    )
+
+    panels = [
+        FieldPanel('whychoosenewrai'),
+    ]
+
+    def __str__(self):
+        return self.page.title + " -> " + self.whychoosenewrai.name
+
+    class Meta(Orderable.Meta):  # pylint: disable=too-few-public-methods
+        """ The meta model"""
+        verbose_name = "whychoosenewrai placement"
+        verbose_name_plural = "whychoosenewrai placements"
+
+
+@register_snippet
 class Trusts(models.Model):
     """ The home model"""
     name = models.CharField(
@@ -103,6 +169,7 @@ class Trusts(models.Model):
 
 class TrustsPageTrustsPlacement(Orderable, models.Model):
     """ The home placement """
+    
     page = ParentalKey(
         "home.HomePage",
         null=True,
@@ -127,8 +194,8 @@ class TrustsPageTrustsPlacement(Orderable, models.Model):
 
     class Meta(Orderable.Meta):  # pylint: disable=too-few-public-methods
         """ The meta model"""
-        verbose_name = "trusts placement"
-        verbose_name_plural = "trusts placements"
+        verbose_name = "trust placement"
+        verbose_name_plural = "trust placements"
 
 
 class HomePage(Page):  # pylint: disable=too-many-ancestors
@@ -266,6 +333,17 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
     )
     home_desc_commitment = RichTextField(blank=True)
 
+    trust_intro = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+    )
+    why_choose_newrai_intro = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+    )
+
     content_panels = Page.content_panels + [
         # ======= Hero Section panel
         InlinePanel("home_placements", label="Home"),
@@ -344,8 +422,20 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
             ],
             heading="Commitment",
         ),
-        InlinePanel("trusts_items", label="Trusts"),
-
+        MultiFieldPanel(
+            [
+                FieldPanel("trust_intro", heading="Introduction"),
+                InlinePanel("trusts_items", label="Trusts"),
+            ],
+            heading="Trust",
+        ),
+        MultiFieldPanel(
+            [
+                FieldPanel("why_choose_newrai_intro", heading=""),
+                InlinePanel("whychoosenewrai_items", label="Why Choose Newrai"),
+            ],
+            heading="Why choose Newrai",
+        )
     ]
 
     def get_context(self, request, *args, **kwargs):

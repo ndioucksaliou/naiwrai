@@ -115,9 +115,9 @@
                 <h1 class="text-center">{{self.trust_intro}}</h1>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="row row-cols-2 row-cols-md-4">
-                            {% for item in self.trusted_items.all %}
-                                {% image item.trust.logo fill-200x200 as img %}
+                        <div class="row row-cols-2 row-cols-md-3 mt-4">
+                            {% for item in self.trusts_items.all %}
+                                {% image item.trusts.logo fill-200x200 as img %}
                                 <img src="{{img.url}}" alt="" class="img-fluid mt-4">
                             {% endfor %}
                         </div>
@@ -129,14 +129,14 @@
         <!-- Why Choose Newrai section  -->
         <section>
             <div class="container">
-                <h1 class="text-center">{{self.whychoosenewrai_intro}}</h1>
+                <h1 class="text-center mb-4">{{self.why_choose_newrai_intro}}</h1>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="row row-cols-2 row-cols-md-6 mt-4 mb-4">
+                        <div class="row row-cols-2 row-cols-md-4">
                             {% for item in self.whychoosenewrai_items.all %}
                                 {% image item.whychoosenewrai.icon fill-200x200 as img %}
                                 <div class="d-flex flex-column align-item-center justify-content-center">
-                                    <img src="{{img.url}}" alt="" class="width-icon mb-4 mt-4">
+                                    <img src="{{img.url}}" alt="" class="width-icon mb-4 mt-4 ml-4">
                                     <p>{{item.whychoosenewrai.description | richtext }}</p>
                                 </div>
                             {% endfor %}
