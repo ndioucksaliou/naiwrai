@@ -29,7 +29,6 @@ INSTALLED_APPS = [
     "offer",
     "page",
     "site_settings",
-    "carousel_items",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.contrib.settings",
