@@ -61,7 +61,6 @@
         <section class="features">
             <div class="container">
                 <div class="row">
-                    
                     <div class="col-md-5 pt-4 top-section">
                         {% image self.home_image_vision fill-451x254 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
@@ -76,22 +75,11 @@
                         </p>
                     </div>
                 </div>
-    
-                <div class="row section-bg">
-                    <div class="col-md-5 order-1 order-md-2 top-section">
-                        {% image self.home_image_project fill-451x318 as img %}
-                        <img src="{{img.url}}" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-md-7 pt-5 order-2 order-md-1">
-                        <div class="section-title">
-                            <h2>{{self.home_title_project}}</h2>
-                        </div>
-                        <p class="fst-italic">
-                            {{self.home_desc_project | richtext}}
-                        </p>
-                    </div>
-                </div>
+            </div>
+        </section><!-- End Features Section -->
 
+        <section class="features section-bg">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-5 order-1 order-md-2 top-section">
                         {% image self.home_image_commitment fill-451x314 as img %}
@@ -108,7 +96,7 @@
                     </div>
                 </div>
             </div>
-        </section><!-- End Features Section -->
+        </section>
         <!-- Trust section  -->
         <section>
             <div class="container">
