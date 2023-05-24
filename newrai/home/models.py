@@ -283,24 +283,6 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
 
     home_desc_vision = RichTextField(blank=True)
 
-    home_desc_project = RichTextField(blank=True)
-
-    # ===================== Novelty Section model ==============================
-    home_image_novelty = models.ForeignKey(
-        "wagtailimages.Image",
-        blank=True,
-        null=True,
-        related_name="+",
-        on_delete=models.SET_NULL,
-    )
-    home_title_novelty = models.CharField(
-        max_length=255,
-        blank=True,
-        null=True,
-        help_text="Ajouter le titre de noveauté",
-    )
-    home_desc_novelty = RichTextField(blank=True)
-
     # =================== Commitment Section Model ============================
     home_image_commitment = models.ForeignKey(
         "wagtailimages.Image",
@@ -375,16 +357,6 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
             ],
             heading="Vision",
             # classname="collapsed",
-        ),
-
-        # ========= Novelty Section Panel
-        MultiFieldPanel(
-            [
-                FieldPanel("home_image_novelty", heading="Image"),
-                FieldPanel("home_title_novelty", heading="Title"),
-                FieldPanel("home_desc_novelty", heading="Description"),
-            ],
-            heading="Novelty",
         ),
 
         # ========= Commitment Section Panel
