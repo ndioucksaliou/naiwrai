@@ -9,18 +9,19 @@
             <div class="container">
                 <div class="row">
                     <div class="section-title mt-3">
-                        <h2>{{self.title}}</h2>
+                        <h1>{{self.title}}</h1>
                     </div>
                     <div class="col-lg-6 video-box">
                         {% image self.image max-546x410 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
-                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+                        <a href="https://www.youtube.com/watch?v=pAFldyrhtjM" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
                     </div>
         
                     <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
-                        {% for item in self.items_mission.all %}
+                        {% for item in self.related_items.all %}
                             <div class="icon-box">
-                                <div class="icon"><i class="bx bx-fingerprint"></i></div>
+                                {% image item.icon fill-200x200 as img %}
+                                <img src="{{img.url}}" class="img-fluid icon" alt="">
                                 <h4 class="title">{{item.name}}</h4>
                                 <div class="description">{{item.description | richtext}}</div>
                             </div>

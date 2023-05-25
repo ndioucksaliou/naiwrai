@@ -30,27 +30,24 @@
         <section class="why-us section-bg" date-aos-delay="200">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 top-section">
-                            <iframe width="560" height="315" src="{{self.youtube_url}}" 
-                                title="YouTube video player" frameborder="0" data-vbtype="video" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-                            </iframe>
+                    <div class="col-lg-6 video-box top-section">
+                        {% image self.home_image_mission max-546x410 as img %}
+                        <img src="{{img.url}}" class="img-fluid" alt="">
+                        <a href="https://www.youtube.com/watch?v=pAFldyrhtjM" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
                     </div>
         
                     <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
                         <div class="section-title">
                             <h2>{{self.home_title_mission}}</h2>
                         </div>
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                            <h4 class="title">{{self.first_intro_mission}}</h4>
-                            <div class="description">{{self.first_desc_mission | richtext}}</div>
-                        </div>
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-gift"></i></div>
-                            <h4 class="title"><a href="">{{self.second_intro_mission}}</a></h4>
-                            <div class="description">{{self.second_desc_mission | richtext}}</div>
-                        </div>
+                        {% for item in self.related_items_for_home.all %}
+                            <div class="icon-box">
+                                {% image item.icon fill-200x200 as img %}
+                                <img src="{{img.url}}" class="img-fluid icon" alt="">
+                                <h4 class="title">{{item.name}}</h4>
+                                <div class="description">{{item.description | richtext}}</div>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

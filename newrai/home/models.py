@@ -270,10 +270,7 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
                 FieldPanel("home_title_mission", heading="Title"),
                 FieldPanel("home_image_mission", heading="Image"),
                 FieldPanel("youtube_url", heading="Lien de la vidéo"),
-                FieldPanel("first_intro_mission", heading="First Intro"),
-                FieldPanel("first_desc_mission", heading="First Desc"),
-                FieldPanel("second_intro_mission", heading="Second Intro"),
-                FieldPanel("second_desc_mission", heading="Second Desc"),
+                InlinePanel("related_items_for_home", label="mission item")
             ],
             heading="Mission",
         ),
@@ -363,24 +360,9 @@ class DigitalisationPage(Page):  # pylint: disable=too-many-ancestors
 
 class MissionPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
     """The Mission Page model """
-    second_intro = models.CharField(
-        max_length=255,
-        blank=True,
-        null=True,
-        help_text="Entrer votre seconde introduction"
-    )
-    second_desc = RichTextField(
-        blank=True,
-        null=True,
-        help_text="Entrer votre seconde description"
-    )
-
     content_panels = Page.content_panels + [
         FieldPanel("image"),
-        FieldPanel("introduction"),
-        FieldPanel("description"),
-        FieldPanel("second_intro"),
-        FieldPanel("second_desc"),
+        InlinePanel("related_items", label="Mission items"),
     ]
 
     class Meta:  # pylint: disable=too-few-public-methods
@@ -388,13 +370,51 @@ class MissionPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
         verbose_name = "Mission Page"
 
 
+class MissionPageRelatedItem(Orderable):
+    page = ParentalKey(
+        MissionPage, on_delete=models.CASCADE, related_name="related_items"
+    )
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+    icon = models.ForeignKey(
+        "wagtailimages.Image",
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+    )
+
+    panels = [
+        FieldPanel("name"),
+        FieldPanel("description"),
+        FieldPanel("icon"),
+    ]
+
+
+class MissionPageRelatedItemForHome(Orderable):
+    page = ParentalKey(
+        HomePage, on_delete=models.CASCADE,
+        related_name="related_items_for_home"
+    )
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+    icon = models.ForeignKey(
+        "wagtailimages.Image",
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+    )
+
+    panels = [
+        FieldPanel("name"),
+        FieldPanel("description"),
+        FieldPanel("icon"),
+    ]
+
 class ProjectPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
     """The Project Page model """
-
     content_panels = Page.content_panels + [
         FieldPanel("image"),
         FieldPanel("description"),
-
     ]
 
     class Meta:  # pylint: disable=too-few-public-methods
