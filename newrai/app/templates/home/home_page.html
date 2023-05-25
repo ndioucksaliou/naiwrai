@@ -103,7 +103,7 @@
                         <div class="row row-cols-2 row-cols-md-3 mt-4">
                             {% for item in self.trusts_items.all %}
                                 {% image item.trusts.logo fill-200x200 as img %}
-                                <img src="{{img.url}}" alt="" class="img-fluid mt-4">
+                                <img src="{{img.url}}" alt="" class="mb-4 mt-4 ml-4 img-fluid">
                             {% endfor %}
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                             {% for item in self.whychoosenewrai_items.all %}
                                 {% image item.whychoosenewrai.icon fill-200x200 as img %}
                                 <div class="d-flex flex-column align-item-center justify-content-center">
-                                    <img src="{{img.url}}" alt="" class="width-icon mb-4 mt-4 ml-4">
+                                    <img src="{{img.url}}" alt="" class="mb-4 mt-4 ml-4 max-width-icon">
                                     <p>{{item.whychoosenewrai.description | richtext }}</p>
                                 </div>
                             {% endfor %}

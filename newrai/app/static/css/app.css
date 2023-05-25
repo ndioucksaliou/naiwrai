@@ -374,6 +374,10 @@ body {
 	width: auto;
 	height: auto;
   }
+
+  .max-width-icon {
+	max-width: 40%;
+  }
   
   #hero .btn-get-started {
 	/* font-family: "Raleway", sans-serif; */
