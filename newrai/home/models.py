@@ -492,3 +492,35 @@ class ContactPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
     class Meta:  # pylint: disable=too-few-public-methods
         """The meta class"""
         verbose_name = "Contact Page"
+
+
+class TetstimonialPage(Page):
+    """Testimonial model"""
+    content_panels = Page.content_panels + [
+        InlinePanel("testtimonial_items", label="Testimonial items"),
+    ]
+
+    class Meta:  # pylint: disable=too-few-public-methods
+        """The meta class"""
+        verbose_name = "Tetstimonial Page"
+
+
+class TetstimonialPageRelatedItem(Orderable):
+    page = ParentalKey(
+        TetstimonialPage, on_delete=models.CASCADE, related_name="testtimonial_items"
+    )
+    description = models.TextField(blank=True)
+    image = models.ForeignKey(
+        "wagtailimages.Image",
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+    )
+    name = models.CharField(max_length=255)
+    role = models.CharField(max_length=255)
+    panels = [
+        FieldPanel("image"),
+        FieldPanel("name"),
+        FieldPanel("role"),
+        FieldPanel("description"),
+    ]
