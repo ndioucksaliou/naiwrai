@@ -96,3 +96,38 @@ class DigitalOfferPage(Page):  # pylint: disable=too-many-ancestors
     class Meta:  # pylint: disable=too-few-public-methods
         """The meta class"""
         verbose_name = "Digital Offer Page"
+
+
+class OfferPage(Page):
+    """ Offer model """
+    bg_image = models.ForeignKey(
+        "wagtailimages.Image",
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    newrai_image = models.ForeignKey(
+        "wagtailimages.Image",
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    cloud_image = models.ForeignKey(
+        "wagtailimages.Image",
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+
+    content_panels = Page.content_panels + [
+        FieldPanel("bg_image"),
+        FieldPanel("newrai_image"),
+        FieldPanel("cloud_image"),
+    ]
+
+    class Meta:  # pylint: disable=too-few-public-methods
+        """The meta class"""
+        verbose_name = "Offer Page"
