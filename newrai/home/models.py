@@ -325,26 +325,25 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
         verbose_name = "Home Page"
 
 
-class DigitalisationPage(Page):  # pylint: disable=too-many-ancestors
-    """The Digitalisation Page model """
+class DetailPage(Page):  # pylint: disable=too-many-ancestors
+    """ Detail page model """
     introduction = models.CharField(
         max_length=255,
         blank=True,
         null=True,
-        help_text='Entrer votre introduction',
+        help_text="Entrer votre introduction",
     )
     image = models.ForeignKey(
         "wagtailimages.Image",
         blank=True,
         null=True,
         on_delete=models.SET_NULL,
-        help_text='Choisir votre image',
+        help_text="Choisir votre image",
     )
-
     description = RichTextField(
         blank=True,
         null=True,
-        help_text='Entrer votre description',
+        help_text="Entrer votre description",
     )
 
     content_panels = Page.content_panels + [
@@ -355,10 +354,18 @@ class DigitalisationPage(Page):  # pylint: disable=too-many-ancestors
 
     class Meta:  # pylint: disable=too-few-public-methods
         """The meta class"""
+        abstract = True
+
+
+class DigitalisationPage(DetailPage):  # pylint: disable=too-many-ancestors
+    """The Digitalisation Page model """
+
+    class Meta:  # pylint: disable=too-few-public-methods
+        """The meta class"""
         verbose_name = "Digitalisation Page"
 
 
-class MissionPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
+class MissionPage(DetailPage):  # pylint: disable=too-many-ancestors
     """The Mission Page model """
     content_panels = Page.content_panels + [
         FieldPanel("image"),
@@ -371,6 +378,7 @@ class MissionPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
 
 
 class MissionPageRelatedItem(Orderable):
+    """ The related item to Mission for Newrai page"""
     page = ParentalKey(
         MissionPage, on_delete=models.CASCADE, related_name="related_items"
     )
@@ -391,6 +399,7 @@ class MissionPageRelatedItem(Orderable):
 
 
 class MissionPageRelatedItemForHome(Orderable):
+    """ The related item to Mission for Home page"""
     page = ParentalKey(
         HomePage, on_delete=models.CASCADE,
         related_name="related_items_for_home"
@@ -410,7 +419,8 @@ class MissionPageRelatedItemForHome(Orderable):
         FieldPanel("icon"),
     ]
 
-class ProjectPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
+
+class ProjectPage(DetailPage):  # pylint: disable=too-many-ancestors
     """The Project Page model """
     content_panels = Page.content_panels + [
         FieldPanel("image"),
@@ -422,22 +432,15 @@ class ProjectPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
         verbose_name = "Project Page"
 
 
-class VisionPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
+class VisionPage(DetailPage):  # pylint: disable=too-many-ancestors
     """The Project Page model """
-
-    content_panels = Page.content_panels + [
-        FieldPanel("introduction"),
-        FieldPanel("image"),
-        FieldPanel("description"),
-
-    ]
 
     class Meta:  # pylint: disable=too-few-public-methods
         """The meta class"""
         verbose_name = "Vision Page"
 
 
-class ContactPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
+class ContactPage(Page):  # pylint: disable=too-many-ancestors
     """The Digitalisation Page model """
     name = models.CharField(
         max_length=255,
@@ -469,24 +472,13 @@ class ContactPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
         blank=True,
         null=True,
     )
-    conatct_image = models.ForeignKey(
-        "wagtailimages.Image",
-        blank=True,
-        null=True,
-        related_name="+",
-        on_delete=models.SET_NULL,
-        help_text='Choisir votre contact image',
-    )
     content_panels = Page.content_panels + [
-        FieldPanel("introduction"),
-        FieldPanel("description"),
         FieldPanel("name"),
         FieldPanel("email"),
         FieldPanel("object"),
         FieldPanel("entreprise"),
         FieldPanel("fonction"),
         FieldPanel("message"),
-        FieldPanel("conatct_image"),
     ]
 
     class Meta:  # pylint: disable=too-few-public-methods
@@ -494,7 +486,7 @@ class ContactPage(DigitalisationPage):  # pylint: disable=too-many-ancestors
         verbose_name = "Contact Page"
 
 
-class TetstimonialPage(Page):
+class TetstimonialPage(Page):  # pylint: disable=too-many-ancestors
     """Testimonial model"""
     content_panels = Page.content_panels + [
         InlinePanel("testtimonial_items", label="Testimonial items"),
@@ -506,8 +498,10 @@ class TetstimonialPage(Page):
 
 
 class TetstimonialPageRelatedItem(Orderable):
+    """The Related Item of Tetstemonial page"""
     page = ParentalKey(
-        TetstimonialPage, on_delete=models.CASCADE, related_name="testtimonial_items"
+        TetstimonialPage, on_delete=models.CASCADE,
+        related_name="testtimonial_items",
     )
     description = models.TextField(blank=True)
     image = models.ForeignKey(
