@@ -218,8 +218,11 @@
       slidesPerView: 'auto',
       pagination: {
         el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
+        // type: 'bullets',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + "</span>";
+        },
       },
       breakpoints: {
         320: {
