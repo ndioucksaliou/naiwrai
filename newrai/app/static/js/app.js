@@ -235,6 +235,24 @@
     });
   
     /**
+     * Trust slider
+     */
+    new Swiper(".portfolio-details-slider", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      speed: 400,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      }
+    });
+
+    /**
      * Animation on scroll
      */
     window.addEventListener('load', () => {
