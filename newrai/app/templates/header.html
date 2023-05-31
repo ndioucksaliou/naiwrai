@@ -41,9 +41,9 @@
       <div class="carousel-item active" style="background-image: url('{% static 'images/first_image.jpg' %}'); background-size: cover; background-repeat: no-repeat;">
         <div class="carousel-container">
           <!-- <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Moderna</span></h2> -->
-          <p class="animate__animated animate__fadeInUp"style="font-size: 33px;font-weight: 900;">Bienvenue sur New Rai, votre partenaire stratégique N°1 pour vous accompagner dans la digitalisation de votre cabinet d’expertise comptable
+          <p class="animate__animated animate__fadeInUp"style="font-size: 28px;font-weight: 900;">Bienvenue sur New Rai, votre partenaire stratégique N°1 pour vous accompagner dans la digitalisation de votre cabinet d’expertise comptable
           </p>
-          <a href="/newrai" class="btn-get-started animate__animated animate__fadeInUp" style="font-size: 25px; font-weight: 900;">Read More</a>
+          <a href="/newrai" class="btn-get-started animate__animated animate__fadeInUp" style="font-size: 23px; font-weight: 900;">Read More</a>
         </div>
       </div>
       {% for block in settings.site_settings.HeaderSettings.carousel_item %}
@@ -51,8 +51,8 @@
         {% image block.value.image width-1200  as img %}
           <div class="carousel-item" style="background-image: url('{{img.url}}'); background-size: cover; background-repeat: no-repeat;">
               <div class="carousel-container">
-                  <span style="font-size: 33px;font-weight: 900;">{{ block.value.description }}</span>
-                  <a href="{{block.value.page.url}}" class="btn-get-started animate__animated animate__fadeInUp scrollto" style="font-size: 25px;
+                  <span style="font-size: 28px;font-weight: 900;">{{ block.value.description }}</span>
+                  <a href="{{block.value.page.url}}" class="btn-get-started animate__animated animate__fadeInUp scrollto" style="font-size: 23px;
                   font-weight: 900;">EN SAVOIR + </a>
               </div>
           </div>

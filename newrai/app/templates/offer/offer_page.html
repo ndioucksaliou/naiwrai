@@ -4,11 +4,11 @@
 {% block content %}
     <h1 class="text-center mt-5">{{self.title}}</h1>
     {% image self.bg_image width-1200 as img %}
-    <main id="main" style="background-image: url({{img.url}});">
+    <main style="background-image: url({{img.url}}); background-size: cover;background-repeat: no-repeat;">
         <!-- ======= Why Us Section ======= -->
         <section class="services">
             <div class="container">
-                <div class="row">
+                <div class="row" style="margin-bottom: 50px;">
                     <div class="col-md-6 d-flex justify-content-center align-items-center">
                         {% image self.newrai_image fill-400x400 as img %}
                         <a href="/offre-digitale">
