@@ -28,8 +28,8 @@ class HeaderSettings(BaseSiteSetting):
                     ('description', blocks.RichTextBlock()),
                     ('image', ImageChooserBlock(required=False)),
                     ("page", blocks.PageChooserBlock(required=False)),
-                ]
-                )
+                ],
+                ),
             ),
         ],
         max_num=6,

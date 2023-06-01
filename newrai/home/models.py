@@ -440,52 +440,6 @@ class VisionPage(DetailPage):  # pylint: disable=too-many-ancestors
         verbose_name = "Vision Page"
 
 
-class ContactPage(Page):  # pylint: disable=too-many-ancestors
-    """The Digitalisation Page model """
-    name = models.CharField(
-        max_length=255,
-        blank=True,
-        null=True,
-    )
-    email = models.EmailField(
-        max_length=255,
-        blank=False,
-        null=True,
-        default="contact@newrai.fr",
-    )
-    object = models.CharField(
-        max_length=255,
-        blank=False,
-        null=True,
-    )
-    entreprise = models.CharField(
-        max_length=255,
-        blank=False,
-        null=True,
-    )
-    fonction = models.CharField(
-        max_length=255,
-        blank=False,
-        null=True,
-    )
-    message = RichTextField(
-        blank=True,
-        null=True,
-    )
-    content_panels = Page.content_panels + [
-        FieldPanel("name"),
-        FieldPanel("email"),
-        FieldPanel("object"),
-        FieldPanel("entreprise"),
-        FieldPanel("fonction"),
-        FieldPanel("message"),
-    ]
-
-    class Meta:  # pylint: disable=too-few-public-methods
-        """The meta class"""
-        verbose_name = "Contact Page"
-
-
 class TetstimonialPage(Page):  # pylint: disable=too-many-ancestors
     """Testimonial model"""
     content_panels = Page.content_panels + [
