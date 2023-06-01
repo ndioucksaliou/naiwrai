@@ -135,14 +135,6 @@ class TrustsPageTrustsPlacement(Orderable, models.Model):
 class HomePage(Page):  # pylint: disable=too-many-ancestors
     """The home page model """
     # ==================== Hero Section Model========================
-    home_description = RichTextField(blank=True)
-    home_image_logo = models.ForeignKey(
-        "wagtailimages.Image",
-        blank=True,
-        null=True,
-        related_name="+",
-        on_delete=models.SET_NULL,
-    )
     slogan_title = models.CharField(
         max_length=255,
         blank=True,
@@ -247,13 +239,6 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
 
     content_panels = Page.content_panels + [
         # ======= Hero Section panel
-        MultiFieldPanel(
-            [
-                FieldPanel("home_description", heading="Description"),
-                FieldPanel("home_image_logo", heading="Image Logo"),
-            ],
-            heading="Home",
-        ),
 
         MultiFieldPanel(
             [
