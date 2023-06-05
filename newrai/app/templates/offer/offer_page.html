@@ -2,9 +2,14 @@
 {% load static wagtailimages_tags wagtailcore_tags %}
 
 {% block content %}
-    <h1 class="text-center mt-5">{{self.title}}</h1>
+    <section>
+        <div class="section-title">
+            <h1>{{self.title}}</h1>
+        </div>
+    </section>
+    
     {% image self.bg_image width-1200 as img %}
-    <main style="background-image: url({{img.url}}); background-size: cover;background-repeat: no-repeat;">
+    <main style="background-image: url({{img.url}}); background-size: cover;background-repeat: no-repeat;align-items: center; justify-content: center;">
         <!-- ======= Why Us Section ======= -->
         <section class="services">
             <div class="container">
