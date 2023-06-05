@@ -3,14 +3,14 @@
 {% block content %}
     
     <!-- End Hero -->
-    <main id="main">
+    <main>
 
         <!-- ======= Services Section ======= -->
         <section class="services">
             <div class="container">
                 <div class="row">
                     <div class="section-title">
-                        <h2>{{self.slogan_title}}</h2>
+                        <h1>{{self.slogan_title}}</h1>
                     </div>
                     <div class="col-md-5 order-1 order-md-2">
                         {% image self.slogan_image fill-451x318 as img %}
@@ -30,13 +30,12 @@
         <section class="why-us section-bg" date-aos-delay="200">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 video-box top-section">
+                    <div class="col-lg-6 video-box d-flex justify-content-center ">
                         {% image self.home_image_mission max-546x410 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
-                        <a href="https://www.youtube.com/watch?v=pAFldyrhtjM" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+                        <a href="https://www.youtube.com/watch?v=pAFldyrhtjM" target="_blank" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
                     </div>
-        
-                    <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+                    <div class="col-lg-6 pt-4">
                         <div class="section-title">
                             <h1>{{self.home_title_mission}}</h1>
                         </div>
@@ -58,13 +57,13 @@
         <section class="features">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5 pt-4 top-section">
+                    <div class="col-md-5 d-flex justify-content-center">
                         {% image self.home_image_vision fill-451x254 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
                     </div>
-                    <div class="col-md-7 pt-4">
+                    <div class="col-md-7 ">
                         <div class="section-title">
-                            <h2>{{self.home_title_vision}}</h2>
+                            <h1>{{self.home_title_vision}}</h1>
                             <p>{{self.home_intro_vision}}</p>
                         </div>
                         <p class="fst-italic">
@@ -78,18 +77,17 @@
         <section class="features section-bg">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5 order-1 order-md-2 top-section">
+                    <div class="col-md-5 order-1 order-md-2 d-flex justify-content-center">
                         {% image self.home_image_commitment fill-451x314 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
                     </div>
-                    <div class="col-md-7 pt-5 order-2 order-md-1">
+                    <div class="col-md-7 order-2 order-md-1">
                         <div class="section-title">
-                            <h2>{{self.home_title_commitment}}</h2>
+                            <h1>{{self.home_title_commitment}}</h1>
                         </div>
                         <p class="fst-italic">
                             {{self.home_desc_commitment | richtext }}
                         </p>
-                    
                     </div>
                 </div>
             </div>
