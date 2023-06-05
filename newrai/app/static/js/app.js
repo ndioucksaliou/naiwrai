@@ -204,6 +204,35 @@
         clickable: true
       }
     });
+
+    /**
+     * Trust slider
+     */
+    new Swiper('.trust-slider', {
+      speed: 600,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      slidesPerView: 'auto',
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20
+        },
+  
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 20
+        }
+      }
+    });
   
     /**
      * Testimonials slider
@@ -220,9 +249,7 @@
         el: '.swiper-pagination',
         type: 'bullets',
         clickable: true,
-        // renderBullet: function (index, className) {
-        //   return '<span class="' + className + '">' + (index + 1) + "</span>";
-        // },
+        
       },
       breakpoints: {
         320: {
@@ -231,7 +258,7 @@
         },
   
         1200: {
-          slidesPerView: 3,
+          slidesPerView: 2,
           spaceBetween: 20
         }
       }
