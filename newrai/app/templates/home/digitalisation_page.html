@@ -3,7 +3,7 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
-    <main id="main">
+    <main>
         <!-- =======Newrai Digital Section ======= -->
         <section class="digital">
             <div class="container">
@@ -11,11 +11,11 @@
                     <h1>{{self.title}}</h1>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 d-flex justify-content-center">
                         {% image self.image fill-546x410 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
                     </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0">
+                    <div class="col-lg-6 pt-4">
                         <p class="fst-italic">
                             {{ self.description | richtext }}
                         </p>
