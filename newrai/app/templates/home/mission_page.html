@@ -3,12 +3,12 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
-    <main id="main">
+    <main>
         <!-- ======= Why Us Section ======= -->
         <section class="why-us section-bg" date-aos-delay="200">
             <div class="container">
                 <div class="row">
-                    <div class="section-title mt-3">
+                    <div class="section-title">
                         <h1>{{self.title}}</h1>
                     </div>
                     <div class="col-lg-6 video-box d-flex justify-content-center align-item-center">
@@ -17,7 +17,7 @@
                         <a href="https://www.youtube.com/watch?v=pAFldyrhtjM" target="_blank" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
                     </div>
         
-                    <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center">
                         {% for item in self.related_items.all %}
                             <div class="icon-box">
                                 {% image item.icon fill-200x200 as img %}

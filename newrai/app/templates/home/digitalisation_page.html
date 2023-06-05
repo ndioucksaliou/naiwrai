@@ -15,8 +15,8 @@
                         {% image self.image fill-546x410 as img %}
                         <img src="{{img.url}}" class="img-fluid" alt="">
                     </div>
-                    <div class="col-lg-6 pt-4">
-                        <p class="fst-italic">
+                    <div class="col-lg-6">
+                        <p class="fst-italic d-flex justify-content-center">
                             {{ self.description | richtext }}
                         </p>
                     </div>
