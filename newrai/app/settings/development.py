@@ -23,7 +23,7 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 sentry_sdk.init(
     dsn=get_env("SENTRY_DSN"),
-    "environment": "development",
+    environment="development",
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
     # We recommend adjusting this value in production,
