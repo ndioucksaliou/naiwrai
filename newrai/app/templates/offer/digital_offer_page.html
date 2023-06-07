@@ -2,26 +2,26 @@
 {% load static wagtailimages_tags wagtailcore_tags %}
 
 {% block content %}
-    <main>
-        <!-- ======= Why Us Section ======= -->
-        <section class="services">
-            <div class="container">
-                <div class="row">
-                    <div class="section-title">
-                        <h1>{{self.title}}</h1>
-                    </div>
-                    {% for offer_placement in self.offer_placements.all %}
-                        <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
-                            <div class="icon-box {{offer_placement.offer.box_class}}">
-                                <div class="icon"><i class="{{offer_placement.offer.icon_class}}"></i></div>
-                                <h4 class="title">{{offer_placement.offer.title}}</h4>
-                                <p class="description">{{offer_placement.offer.description | richtext }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
+<main>
+    <!-- ======= Why Us Section ======= -->
+    <section class="services">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h1>{{self.title}}</h1>
                 </div>
+                {% for offer_placement in self.offer_placements.all %}
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+                    <div class="icon-box {{offer_placement.offer.box_class}}">
+                        <div class="icon"><i class="{{offer_placement.offer.icon_class}}"></i></div>
+                        <h4 class="title">{{offer_placement.offer.title}}</h4>
+                        <p class="description">{{offer_placement.offer.description | richtext }}</p>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
-        </section>
-        <!-- End Why Us Section -->
-    </main>
+        </div>
+    </section>
+    <!-- End Why Us Section -->
+</main>
 {% endblock %}

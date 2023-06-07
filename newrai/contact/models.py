@@ -33,7 +33,7 @@ class FormField(AbstractFormField, models.Model):
     )
 
 
-class ContactPage(AbstractEmailForm):
+class ContactPage(AbstractEmailForm):  # pylint: disable=too-many-ancestors
     """ Contact Page model """
     template = "contact/contact_page.html"
     # This is the default path.

@@ -1,36 +1,36 @@
-
 {% extends "base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
-    <main>
-        <!-- ======= Why Us Section ======= -->
-        <section class="why-us section-bg" date-aos-delay="200">
-            <div class="container">
-                <div class="row">
-                    <div class="section-title">
-                        <h1>{{self.title}}</h1>
+<main>
+    <!-- ======= Why Us Section ======= -->
+    <section class="why-us section-bg" date-aos-delay="200">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h1>{{self.title}}</h1>
+                </div>
+                <div class="col-lg-6 video-box d-flex justify-content-center">
+                    {% image self.image max-546x410 as img %}
+                    <img src="{{img.url}}" class="img-fluid" alt="">
+                    <a href="https://www.youtube.com/watch?v=pAFldyrhtjM" target="_blank" class="venobox play-btn mb-4"
+                        data-vbtype="video" data-autoplay="true"></a>
+                </div>
+
+                <div class="col-lg-6 pt-4">
+                    {% for item in self.related_items.all %}
+                    <div class="icon-box">
+                        {% image item.icon fill-200x200 as img %}
+                        <img src="{{img.url}}" class="img-fluid icon" alt="">
+                        <h4 class="title">{{item.name}}</h4>
+                        <div class="description">{{item.description | richtext}}</div>
                     </div>
-                    <div class="col-lg-6 video-box d-flex justify-content-center">
-                        {% image self.image max-546x410 as img %}
-                        <img src="{{img.url}}" class="img-fluid" alt="">
-                        <a href="https://www.youtube.com/watch?v=pAFldyrhtjM" target="_blank" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
-                    </div>
-        
-                    <div class="col-lg-6 pt-4">
-                        {% for item in self.related_items.all %}
-                            <div class="icon-box">
-                                {% image item.icon fill-200x200 as img %}
-                                <img src="{{img.url}}" class="img-fluid icon" alt="">
-                                <h4 class="title">{{item.name}}</h4>
-                                <div class="description">{{item.description | richtext}}</div>
-                            </div>
-                        {% endfor %}
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
-        </section>
-        <!-- End Why Us Section -->
-    </main>
+        </div>
+    </section>
+    <!-- End Why Us Section -->
+</main>
 
 {% endblock %}
