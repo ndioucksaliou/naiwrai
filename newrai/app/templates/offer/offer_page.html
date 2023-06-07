@@ -8,9 +8,8 @@
     </div>
 </section>
 
-{% image self.bg_image width-1200 as img %}
-<main
-    style="background-image: url({{img.url}}); background-size: cover;background-repeat: no-repeat;align-items: center; justify-content: center;">
+{% image self.bg_image fill-1900x1000 as img %}
+<main class="bg-img-content" style="background-image: url({{img.url}})">
     <!-- ======= Why Us Section ======= -->
     <section class="services">
         <div class="container">

@@ -326,6 +326,9 @@ h6,
 /*--------------------------------------------------------------
   # Hero Section
   --------------------------------------------------------------*/
+.text-format {
+	text-transform: capitalize;
+}
 
 .padding-img-carousel {
 	padding-left: 0;
@@ -507,6 +510,7 @@ section {
 .section-title {
 	text-align: center;
 	padding-bottom: 30px;
+	text-transform: capitalize;
 }
 
 .section-title h1 {
@@ -517,7 +521,16 @@ section {
 	position: relative;
 }
 
-.section-title h1::before {
+.section-title h2 {
+	font-size: 20px;
+	font-weight: 400;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.section-title h1::before,
+.section-title h2::before {
 	content: "";
 	position: absolute;
 	display: block;
@@ -528,7 +541,8 @@ section {
 	left: calc(50% - 60px);
 }
 
-.section-title h1::after {
+.section-title h1::after,
+.section-title h2::after {
 	content: "";
 	position: absolute;
 	display: block;
@@ -709,9 +723,8 @@ section {
 	position: relative;
 }
 
-.why-us .video-box img {
-	padding-top: 15px;
-	padding-bottom: 15px;
+.padding-row {
+	padding: 60px 0;
 }
 
 .why-us .play-btn {

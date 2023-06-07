@@ -27,18 +27,19 @@
     <!-- End Services Section -->
 
     <!-- ======= Why Us Section ======= -->
-    <section class="why-us section-bg" date-aos-delay="200">
+    <section class="why-us section-bg">
         <div class="container">
-            <div class="row">
+            <div class="row padding-row">
                 <div class="col-lg-6 video-box d-flex justify-content-center ">
                     {% image self.home_image_mission max-546x410 as img %}
                     <img src="{{img.url}}" class="img-fluid" alt="">
                     <a href="https://www.youtube.com/watch?v=pAFldyrhtjM" target="_blank" class="venobox play-btn mb-4"
-                        data-vbtype="video" data-autoplay="true"></a>
+                        data-vbtype="video" data-autoplay="true">
+                    </a>
                 </div>
                 <div class="col-lg-6">
                     <div class="section-title">
-                        <h1>{{self.home_title_mission}}</h1>
+                        <h2>{{self.home_title_mission}}</h2>
                     </div>
                     {% for item in self.related_items_for_home.all %}
                     <div class="icon-box">
@@ -62,9 +63,9 @@
                     {% image self.home_image_vision fill-451x254 as img %}
                     <img src="{{img.url}}" class="img-fluid" alt="">
                 </div>
-                <div class="col-md-7 ">
+                <div class="col-md-7">
                     <div class="section-title">
-                        <h1>{{self.home_title_vision}}</h1>
+                        <h2>{{self.home_title_vision}}</h2>
                         <p>{{self.home_intro_vision}}</p>
                     </div>
                     <p class="fst-italic">
@@ -84,7 +85,7 @@
                 </div>
                 <div class="col-md-7 order-2 order-md-1">
                     <div class="section-title">
-                        <h1>{{self.home_title_commitment}}</h1>
+                        <h2>{{self.home_title_commitment}}</h2>
                     </div>
                     <p class="fst-italic">
                         {{self.home_desc_commitment | richtext }}
@@ -96,7 +97,7 @@
     <!-- Trust section  -->
     <section>
         <div class="container">
-            <h1 class="text-center">{{self.trust_intro}}</h1>
+            <h2 class="text-center">{{self.trust_intro}}</h2>
             <div class="row">
                 <div class="col-md-12">
                     <div class="trust-slider swiper">
@@ -108,7 +109,7 @@
                             </div>
                             {% endfor %}
                         </div>
-                        <div class="swiper-pagination" style="bottom: 0;"></div>
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </div>
@@ -118,13 +119,13 @@
     <!-- Why Choose Newrai section  -->
     <section>
         <div class="container">
-            <h1 class="text-center mb-4">{{self.why_choose_newrai_intro}}</h1>
+            <h2 class="text-center mb-4">{{self.why_choose_newrai_intro}}</h2>
             <div class="row">
                 <div class="col-md-12">
                     <div class="row row-cols-2 row-cols-md-4">
                         {% for item in self.whychoosenewrai_items.all %}
                         {% image item.whychoosenewrai.icon fill-200x200 as img %}
-                        <div class="d-flex flex-column align-item-center justify-content-center">
+                        <div class="d-flex flex-column justify-content-left">
                             <img src="{{img.url}}" alt="" class="mb-4 mt-4 ml-4 max-width-icon">
                             <p>{{item.whychoosenewrai.description | richtext }}</p>
                         </div>
