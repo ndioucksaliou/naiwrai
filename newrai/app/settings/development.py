@@ -1,5 +1,5 @@
 from .base import *
-
+import sentry_sdk
 from core_lib.config_loader.utils import get_env
 
 
@@ -20,6 +20,15 @@ CSRF_TRUSTED_ORIGINS = [f"https://{DOMAIN}"]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+
+sentry_sdk.init(
+    dsn=get_env("SENTRY_DSN"),
+    "environment": "development",
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production,
+    traces_sample_rate=0.1,
+)
 
 # try:
 #     from .local import *
