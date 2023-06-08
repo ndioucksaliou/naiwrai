@@ -4,20 +4,24 @@
 {% block content %}
 <main>
     <!-- ======= Why Us Section ======= -->
-    <section class="why-us section-bg" date-aos-delay="200">
+    <section class="why-us">
         <div class="container">
-            <div class="row">
+
+            <div class="row padding-row">
                 <div class="section-title">
                     <h1>{{self.title}}</h1>
                 </div>
-                <div class="col-lg-6 video-box d-flex justify-content-center">
-                    {% image self.image max-546x410 as img %}
-                    <img src="{{img.url}}" class="img-fluid" alt="">
-                    <a href="https://www.youtube.com/watch?v=pAFldyrhtjM" target="_blank" class="venobox play-btn mb-4"
-                        data-vbtype="video" data-autoplay="true"></a>
+                <div class="col-lg-6 video-box d-flex justify-content-center ">
+                    <iframe width="560" height="400" src="https://www.youtube.com/embed/pAFldyrhtjM"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                    <!-- <a href="https://www.youtube.com/watch?v=pAFldyrhtjM" target="_blank" class="venobox play-btn mb-4"
+                            data-vbtype="video" data-autoplay="true">
+                        </a> -->
                 </div>
-
-                <div class="col-lg-6 pt-4">
+                <div class="col-lg-6">
                     {% for item in self.related_items.all %}
                     <div class="icon-box">
                         {% image item.icon fill-200x200 as img %}
