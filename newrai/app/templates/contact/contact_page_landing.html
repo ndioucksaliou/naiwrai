@@ -5,7 +5,7 @@
 <main id="main" class="text-format">
     <div class="container mt-5 mb-5 text-center bg-form">
         <p>
-            <span>{{ self.introduction }}</span> <span>{{ self.to_address }}</span>
+            <span>{{ self.introduction | richtext }}</span> <span>{{ self.to_address }}</span>
             <span>{{ self.desc | richtext }}</span>
         </p>
     </div>
