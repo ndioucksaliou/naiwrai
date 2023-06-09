@@ -19,7 +19,7 @@
                                 <p>A108 Adam Street, New York, NY 535022</p>
                             </div>
                         </div>
-                        <div class="row d-flex flex-row" style="margin-top: 47px;">
+                        <div class="row d-flex flex-row top-email-contact">
                             <div class="col-md-6">
                                 <div class="info-box">
                                     <i class="bx bx-envelope"></i>
@@ -40,9 +40,9 @@
                 <div class="col-lg-6">
                     <form action="{% pageurl page %}" method="POST" class="bg-form">
                         {% csrf_token %}
-                        <ul class="contact-form">
-                            {{ form.as_ul }}
-                        </ul>
+                        <div class="contact-form">
+                            {{ form.as_div }}
+                        </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-success">
                                 Send Message
