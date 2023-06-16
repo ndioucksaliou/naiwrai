@@ -13,11 +13,11 @@
                     <h1>{{self.slogan_title}}</h1>
                 </div>
                 <div class="col-md-5 order-1 order-md-2">
-                    {% image self.slogan_image fill-451x318 as img %}
+                    {% image self.slogan_image fill-1000x800 as img %}
                     <img src="{{img.url}}" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7 pt-5 order-2 order-md-1">
-                    <div class="fst-italic" style="font-size: 30px;color: #1e4356;">
+                    <div class="text-uppercase text-slogan">
                         {{self.slogan_description | richtext}}
                     </div>
                 </div>
@@ -120,7 +120,7 @@
     </section>
 
     <!-- Why Choose Newrai section  -->
-    <section>
+    <section class="section-bg">
         <div class="container">
             <h2 class="text-center mb-4">{{self.why_choose_newrai_intro}}</h2>
             <div class="row">

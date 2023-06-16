@@ -403,8 +403,8 @@ h6,
 
 #hero .btn-get-started {
 	/* font-family: "Raleway", sans-serif; */
-	font-weight: 500;
-	font-size: 14px;
+	font-weight: 900;
+	font-size: 24px;
 	letter-spacing: 1px;
 	display: inline-block;
 	padding: 12px 32px;
@@ -557,6 +557,12 @@ section {
 	margin-bottom: 0;
 }
 
+.text-slogan {
+	font-size: 40px;
+	color: #1e4356;
+	font-weight: 900;
+}
+
 /*--------------------------------------------------------------
 # Our Services
 --------------------------------------------------------------*/
@@ -599,6 +605,7 @@ section {
 	font-weight: 700;
 	margin-bottom: 15px;
 	font-size: 18px;
+	/* color: #0dcaf0; */
 }
 
 .services .title a {
@@ -648,15 +655,15 @@ section {
 }
 
 .services .icon-box-blue .icon {
-	background: #e1eeff;
+	background: #ffc107;
 }
 
 .services .icon-box-blue .icon i {
-	color: #2282ff;
+	color: #000;
 }
 
 .services .icon-box-blue:hover {
-	border-color: #2282ff;
+	border-color: #000;
 }
 
 /*--------------------------------------------------------------
@@ -1358,7 +1365,6 @@ section {
 .bg-form {
 	box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
 	padding: 30px;
-	margin-bottom: 30px;
 }
 
 .top-email-contact {
@@ -1367,15 +1373,15 @@ section {
 
 .contact-form {
 	list-style-type: none;
-	padding-left: 0;
 	display: flex;
 	flex-wrap: wrap;
-	margin-bottom: 0px;
+
 }
 
 .contact-form div {
-	margin-bottom: 1.5rem;
-	margin-left: 10px;
+	margin-bottom: 5px;
+	margin-left: 13px;
+	margin-right: 20px;
 }
 
 .contact-form label {
@@ -1408,7 +1414,7 @@ section {
 
 .contact-form textarea {
 	min-height: calc(1.5em + 0.75rem + 2px);
-	padding: 0px 51px;
+	padding: 0px 63px;
 	color: #212529;
 	background-color: #fff;
 	background-clip: padding-box;

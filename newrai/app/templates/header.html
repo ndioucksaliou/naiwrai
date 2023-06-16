@@ -13,16 +13,16 @@
     <nav id="navbar" class="navbar">
       <ul>
         <li><a class="{% if page.slug == 'home' %}active {% endif %} " href="/">Accueil</a></li>
-        <li><a class="{% if page.slug == 'newrai' %} active {% endif %}" href="/newrai">Newrai</a></li>
+        <li><a class="{% if page.slug == 'newraip' %} active {% endif %}" href="/newraip">Newrai</a></li>
         <li><a class="{% if page.slug == 'applications' %}active{% endif %}" href="/applications">Nos Applications</a>
         </li>
-        <li><a class="{% if page.slug == 'nos-missions' %} active {% endif %}" href="/nos-missions">Nos Missions</a>
+        <li><a class="{% if page.slug == 'mission' %} active {% endif %}" href="/mission">Nos Missions</a>
         </li>
         <li><a class="{% if page.slug == 'offre' %} active {% endif %}" href="/offre">Nos Offres</a></li>
         <li><a target="_blank" href="https://blog.newrai.fr/">Blog</a></li>
         <li class="dropdown"><a href="#"><span>A propos de nous</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a class="{% if page.slug == 'notre-vision' %}active{% endif %}" href="/notre-vision">Notre vision</a>
+            <li><a class="{% if page.slug == 'vision' %}active{% endif %}" href="/vision">Notre vision</a>
             </li>
             <li><a class="{% if page.slug == 'tetstimonial' %}active {% endif %}" href="/tetstimonial">Témoignages</a>
             </li>
@@ -42,23 +42,25 @@
     <!-- Slide 1 -->
     <div class="carousel-item active bg-img-content"
       style="background-image: url('{% static 'images/first_image.jpg' %}')">
-      <div class="carousel-container">
+      <div class="carousel-container text-uppercase text-center">
         <!-- <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Moderna</span></h2> -->
         <p class="animate__animated animate__fadeInUp p-content">Bienvenue sur New Rai,
           votre partenaire stratégique N°1 pour vous accompagner dans la digitalisation de votre cabinet d’expertise
           comptable
         </p>
-        <a href="/newrai" class="btn-get-started animate__animated animate__fadeInUp btn-plus">Read More</a>
+        <a href="/newraip" class="btn-get-started animate__animated animate__fadeInUp btn-plus">Read
+          More</a>
       </div>
     </div>
     {% for block in settings.site_settings.HeaderSettings.carousel_item %}
     {% if block.block_type == 'list_items' %}
     {% image block.value.image width-1200 as img %}
     <div class="carousel-item bg-img-content" style="background-image: url('{{img.url}}')">
-      <div class="carousel-container">
+      <div class="carousel-container text-uppercase text-center">
         <span class="p-content">{{ block.value.description }}</span>
         <a href="{{block.value.page.url}}"
-          class="btn-get-started animate__animated animate__fadeInUp scrollto btn-plus">EN SAVOIR + </a>
+          class="btn-get-started animate__animated animate__fadeInUp scrollto btn-plus">EN
+          SAVOIR + </a>
       </div>
     </div>
     {% endif %}
