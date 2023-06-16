@@ -292,7 +292,8 @@ class HomePage(Page):  # pylint: disable=too-many-ancestors
         MultiFieldPanel(
             [
                 FieldPanel("why_choose_newrai_intro", heading=""),
-                InlinePanel("whychoosenewrai_items", label="Why Choose Newrai"),
+                InlinePanel("whychoosenewrai_items",
+                            label="Why Choose Newrai"),
             ],
             heading="Why choose Newrai",
         )
@@ -391,11 +392,11 @@ class MissionPageRelatedItemForHome(Orderable):
     )
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
-    icon = models.ForeignKey(
-        "wagtailimages.Image",
-        blank=True,
+    icon = models.CharField(
+        max_length=255,
+        blank=False,
         null=True,
-        on_delete=models.SET_NULL,
+        help_text="Donner la class de l'icon ",
     )
 
     panels = [

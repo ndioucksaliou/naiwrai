@@ -71,8 +71,7 @@
                     </div>
                     {% for item in self.related_items_for_home.all %}
                     <div class="icon-box">
-                        {% image item.icon fill-200x200 as img %}
-                        <img src="{{img.url}}" class="img-fluid icon" alt="">
+                        <div class="icon"><i class="{{item.icon}}"></i></div>
                         <h4 class="title">{{item.name}}</h4>
                         <div class="description">{{item.description | richtext}}</div>
                     </div>
