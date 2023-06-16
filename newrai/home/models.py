@@ -370,11 +370,11 @@ class MissionPageRelatedItem(Orderable):
     )
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
-    icon = models.ForeignKey(
-        "wagtailimages.Image",
-        blank=True,
+    icon = models.CharField(
+        max_length=255,
+        blank=False,
         null=True,
-        on_delete=models.SET_NULL,
+        help_text="Donner la class de l'icon ",
     )
 
     panels = [
