@@ -930,10 +930,10 @@ section {
 --------------------------------------------------------------*/
 
 .testimonials .description {
-	color: #808080;
+	color: #000;
 	position: relative;
 	padding: 15px;
-	background: #f1f1f1;
+	background: lightblue;
 	border: 1px solid #efefef;
 	border-radius: 3px;
 	margin-bottom: 15px;
@@ -944,7 +944,7 @@ section {
 	width: 15px;
 	height: 15px;
 	display: block;
-	background: #f1f1f1;
+	background: lightblue;
 	border: 1px solid #efefef;
 	border-width: 0 0 1px 1px;
 	position: absolute;
@@ -978,7 +978,7 @@ section {
 
 .testimonials .overview b {
 	text-transform: uppercase;
-	color: #1abc9c;
+	color: lightblue;
 }
 
 .testimonials .section-header {

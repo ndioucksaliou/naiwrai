@@ -10,27 +10,6 @@
                 <div class="section-title">
                     <h1>{{self.title}}</h1>
                 </div>
-                {% for app in apps %}
-                {% with app=app.specific %}
-                <div class="col-md-6 d-flex align-items-center justify-content-center">
-                    <a href="{{app.url}}">
-                        <div class="card">
-                            <div class="card-img">
-                                {% image app.image fill-300x300 as img %}
-                                <img src="{{img.url}}" alt="{{app.name}}">
-                            </div>
-                            <div class="row top-direction">
-                                <div class="col-md-6 offset-md-3">
-                                    <a class="btn btn-light" href="{{ app.url }}">En savoir +</a>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </a>
-                </div>
-                {% endwith %}
-                {% endfor %}
             </div>
         </div>
     </section>
