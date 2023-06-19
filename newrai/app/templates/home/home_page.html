@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-md-5 order-1 order-md-2">
                     {% image self.slogan_image fill-1000x800 as img %}
-                    <img src="{{img.url}}" class="img-fluid" alt="">
+                    <img src="{{img.url}}" class="img-fluid" alt="{{self.slogan_title}}">
                 </div>
                 <div class="col-md-7 pt-5 order-2 order-md-1">
                     <div class="text-uppercase text-slogan">
@@ -32,7 +32,7 @@
             <div class="row padding-row">
                 <div class="col-lg-6 video-box d-flex justify-content-center ">
                     {% image self.home_image_mission fill-546x410 as img %}
-                    <img src="{{img.url}}" class="img-fluid" alt="">
+                    <img src="{{img.url}}" class="img-fluid" alt="{{self.home_title_mission}}">
                     <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4"
                         data-vbtype="video" data-autoplay="true" data-bs-toggle="modal"
                         data-bs-target="#staticBackdrop">
@@ -88,7 +88,7 @@
             <div class="row">
                 <div class="col-md-5 d-flex justify-content-center">
                     {% image self.home_image_vision fill-451x254 as img %}
-                    <img src="{{img.url}}" class="img-fluid" alt="">
+                    <img src="{{img.url}}" class="img-fluid" alt="{{self.home_title_vision}}">
                 </div>
                 <div class="col-md-7">
                     <div class="section-title">
@@ -108,7 +108,7 @@
             <div class="row">
                 <div class="col-md-5 order-1 order-md-2 d-flex justify-content-center">
                     {% image self.home_image_commitment fill-451x314 as img %}
-                    <img src="{{img.url}}" class="img-fluid" alt="">
+                    <img src="{{img.url}}" class="img-fluid" alt="{{self.home_title_commitment}}">
                 </div>
                 <div class="col-md-7 order-2 order-md-1">
                     <div class="section-title">
@@ -132,7 +132,7 @@
                             {% for item in self.trusts_items.all %}
                             {% image item.trusts.logo fill-200x200 as img %}
                             <div class="testimonial-item swiper-slide">
-                                <img src="{{img.url}}" alt="" class="img-fluid">
+                                <img src="{{img.url}}" alt="{{item.trusts.name}}" class="img-fluid">
                             </div>
                             {% endfor %}
                         </div>
@@ -153,7 +153,8 @@
                         {% for item in self.whychoosenewrai_items.all %}
                         {% image item.whychoosenewrai.icon fill-200x200 as img %}
                         <div class="d-flex flex-column justify-content-left">
-                            <img src="{{img.url}}" alt="" class="mb-4 mt-4 ml-4 max-width-icon">
+                            <img src="{{img.url}}" alt="{{item.whychoosenewrai.name}}"
+                                class="mb-4 mt-4 ml-4 max-width-icon">
                             <p>{{item.whychoosenewrai.description | richtext }}</p>
                         </div>
                         {% endfor %}
