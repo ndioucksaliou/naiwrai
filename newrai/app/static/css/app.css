@@ -1060,6 +1060,13 @@ section {
 	align-items: center;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+	color: white;
+	width: 2rem;
+	height: 2rem;
+}
+
 .swiper-pagination-bullet {
 	width: 20px;
 	height: 20px;
