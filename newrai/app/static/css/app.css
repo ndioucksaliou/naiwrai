@@ -6,12 +6,14 @@ body {
 	color: #444;
 }
 
-a {
+a,
+button {
 	color: #4fa6d5;
 	text-decoration: none;
 }
 
-a:hover {
+a:hover,
+button:hover {
 	color: #45beff;
 	text-decoration: none;
 }
