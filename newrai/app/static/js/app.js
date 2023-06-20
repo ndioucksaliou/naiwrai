@@ -201,25 +201,7 @@
     slidesPerView: 'auto',
     pagination: {
       el: '.swiper-pagination',
-      // type: 'bullets',
       clickable: true,
-    }
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
     }
   });
 
@@ -279,24 +261,6 @@
         slidesPerView: 2,
         spaceBetween: 20
       }
-    }
-  });
-
-  /**
-   * Trust slider
-   */
-  new Swiper(".portfolio-details-slider", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    speed: 400,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
     }
   });
 
