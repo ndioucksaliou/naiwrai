@@ -27,10 +27,10 @@
     <!-- End Services Section -->
 
     <!-- ======= Why Us Section ======= -->
-    <section class="why-us section-bg" date-aos-delay="200">
+    <section class="why-us section-bg">
         <div class="container">
             <div class="row padding-row">
-                <div class="col-lg-6 video-box d-flex justify-content-center ">
+                <div class="col-lg-6 video-box d-flex justify-content-center">
                     {% image self.home_image_mission fill-546x410 as img %}
                     <img src="{{img.url}}" class="img-fluid" alt="{{self.home_title_mission}}">
                     <span class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true" data-bs-toggle="modal"
@@ -60,11 +60,12 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="section-title">
                         <h2>{{self.home_title_mission}}</h2>
                     </div>
