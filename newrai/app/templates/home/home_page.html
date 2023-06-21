@@ -152,7 +152,7 @@
                     <div class="row row-cols-2 row-cols-md-4">
                         {% for item in self.whychoosenewrai_items.all %}
                         {% image item.whychoosenewrai.icon fill-200x200 as img %}
-                        <div class="d-flex flex-column justify-content-left">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
                             <img src="{{img.url}}" alt="{{item.whychoosenewrai.name}}"
                                 class="mb-4 mt-4 ml-4 max-width-icon">
                             <p>{{item.whychoosenewrai.description | richtext }}</p>
