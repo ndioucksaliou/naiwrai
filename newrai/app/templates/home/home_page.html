@@ -93,11 +93,10 @@
                 <div class="col-md-7">
                     <div class="section-title">
                         <h2>{{self.home_title_vision}}</h2>
-                        <p>{{self.home_intro_vision}}</p>
                     </div>
-                    <p class="fst-italic">
+                    <div class="text-center">
                         {{ self.home_desc_vision | richtext }}
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -114,9 +113,9 @@
                     <div class="section-title">
                         <h2>{{self.home_title_commitment}}</h2>
                     </div>
-                    <p class="fst-italic">
+                    <div class="text-center">
                         {{self.home_desc_commitment | richtext }}
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -155,7 +154,7 @@
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <img src="{{img.url}}" alt="{{item.whychoosenewrai.name}}"
                                 class="mb-4 mt-4 ml-4 max-width-icon">
-                            <p>{{item.whychoosenewrai.description | richtext }}</p>
+                            <div class="text-center">{{item.whychoosenewrai.description | richtext }}</div>
                         </div>
                         {% endfor %}
                     </div>
