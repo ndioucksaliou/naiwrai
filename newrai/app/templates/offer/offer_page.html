@@ -12,32 +12,28 @@
                 <h1>{{self.title}}</h1>
             </div>
             <div class="row justify-content-md-center">
-                <div class="col-md-3"></div>
-                <div class="col-md-3 mb-4">
+                <div class="col-lg-3 col-md-4 col-sm-4 mb-4 align-items-stretch">
                     <a href="/offre-digitale">
                         <div class="card img-shadow">
                             <div class="card-body d-flex flex-column justify-content-center align-items-center">
                                 {% image self.newrai_image fill-400x300 as img %}
                                 <img src="{{img.url}}" class="img-fluid card-img-top" alt="{{self.title}}" />
-                                <span class="card-title text-uppercase offer-text">NEWRAI</span>
-                                <span class="card-title text-uppercase offer-text">DIGITAL</span>
+                                <span class="card-title text-uppercase offer-text">NEWRAI DIGITAL</span>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-lg-3 col-md-4 col-sm-4 mb-4 align-items-stretch">
                     <a href="http://www.neonity.com/">
                         <div class="card img-shadow">
                             <div class="card-body d-flex flex-column justify-content-center align-items-center">
                                 {% image self.cloud_image fill-400x300 as img %}
                                 <img src="{{img.url}}" class="img-fluid card-img-top" alt="{{self.title}}" />
-                                <span class="card-title text-uppercase offer-text">HEBERGEMENT</span>
-                                <span class="card-title text-uppercase offer-text">CLOUD </span>
+                                <span class="card-title text-uppercase offer-text">HEBERGEMENT CLOUD</span>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-3"></div>
             </div>
         </div>
     </section>

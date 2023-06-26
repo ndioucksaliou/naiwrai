@@ -73,7 +73,7 @@
                     <div class="icon-box">
                         <div class="icon"><i class="{{item.icon}}"></i></div>
                         <h4 class="title">{{item.name}}</h4>
-                        <div class="description">{{item.description | richtext}}</div>
+                        <p class="description">{{item.description | richtext}}</p>
                     </div>
                     {% endfor %}
                 </div>
@@ -151,10 +151,9 @@
                     <div class="row row-cols-2 row-cols-md-4">
                         {% for item in self.whychoosenewrai_items.all %}
                         {% image item.whychoosenewrai.icon fill-200x200 as img %}
-                        <div class="d-flex flex-column justify-content-center align-items-center">
-                            <img src="{{img.url}}" alt="{{item.whychoosenewrai.name}}"
-                                class="mb-4 mt-4 ml-4 max-width-icon">
-                            <div class="text-center">{{item.whychoosenewrai.description | richtext }}</div>
+                        <div class="d-flex flex-column justify-content-center align-items-stretch">
+                            <img src="{{img.url}}" alt="{{item.whychoosenewrai.name}}" class="max-width-icon">
+                            <p class="text-center">{{item.whychoosenewrai.description | richtext }}</p>
                         </div>
                         {% endfor %}
                     </div>
