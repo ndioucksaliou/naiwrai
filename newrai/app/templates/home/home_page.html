@@ -127,10 +127,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="trust-slider swiper">
-                        <div class="swiper-wrapper mb-5">
+                        <div class="swiper-wrapper" style="margin-bottom: 30px;">
                             {% for item in self.trusts_items.all %}
-                            {% image item.trusts.logo fill-200x200 as img %}
-                            <div class="testimonial-item swiper-slide">
+                            {% image item.trusts.logo fill-300x300 as img %}
+                            <div class="testimonial-item swiper-slide ">
                                 <img src="{{img.url}}" alt="{{item.trusts.name}}" class="img-fluid">
                             </div>
                             {% endfor %}
@@ -151,7 +151,7 @@
                     <div class="row row-cols-2 row-cols-md-4">
                         {% for item in self.whychoosenewrai_items.all %}
                         {% image item.whychoosenewrai.icon fill-200x200 as img %}
-                        <div class="d-flex flex-column justify-content-center align-items-stretch">
+                        <div class="d-flex flex-column align-items-stretch">
                             <img src="{{img.url}}" alt="{{item.whychoosenewrai.name}}" class="max-width-icon">
                             <p class="text-center">{{item.whychoosenewrai.description | richtext }}</p>
                         </div>
