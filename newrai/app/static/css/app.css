@@ -1336,12 +1336,15 @@ button[type=submit]:hover {
 	background: #0d2735;
 }
 
-#footer .footer-newsletter h4 {
+#footer h4,
+#footer button {
 	font-size: 24px;
 	margin: 0 0 20px 0;
 	padding: 0;
 	line-height: 1;
 	font-weight: 600;
+	list-style: none;
+	text-decoration: none;
 	color: #a2cce3;
 }
 
@@ -1351,6 +1354,12 @@ button[type=submit]:hover {
 	padding: 6px 10px;
 	position: relative;
 	border-radius: 50px;
+}
+
+#sb_form {
+	background: #fff;
+	padding: 10px 20px 20px 20px;
+	border-radius: 0px;
 }
 
 #footer .footer-newsletter form input[type=email] {
