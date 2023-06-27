@@ -1362,6 +1362,68 @@ button[type=submit]:hover {
 	border-radius: 0px;
 }
 
+#input-form {
+	border: 1px solid #e6e4e4;
+	background-color: #f1f1f1;
+	height: 35px;
+	margin: 5px 0 18px 0;
+	font-size: .9em;
+	padding-left: 5px;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	text-indent: 5px;
+	width: 100%;
+}
+
+#form-mandatory {
+	font-size: 13px;
+	margin-left: 5px;
+	font-family: "Open Sans", sans-serif;
+	color: #115473;
+}
+
+#form-footer-mandatory {
+	color: #115473;
+	font-family: "Open Sans", sans-serif;
+	font-size: 12px;
+	display: block;
+	margin-top: 20px;
+}
+
+#div-submitInput {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+#submitInput {
+	border-style: solid;
+	text-align: center;
+	color: #fff;
+	border-color: #fff;
+	border-width: 0px;
+	border-radius: 0px;
+	padding: 10px 25px;
+	text-decoration: none;
+	display: block;
+	font-family: "Arial";
+	font-style: inherit;
+	font-weight: inherit;
+	font-size: 15px;
+	background-color: #115473;
+	cursor: pointer;
+}
+
+#label-content {
+	color: #115473;
+	font-family: "Open Sans", sans-serif;
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+
 #footer .footer-newsletter form input[type=email] {
 	border: 0;
 	padding: 4px;
