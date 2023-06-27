@@ -44,7 +44,7 @@
         {% for block in settings.site_settings.HeaderSettings.carousel_item %}
         {% if block.block_type == 'list_items' %}
         {% image block.value.image fill-1500x500-c100 as img %}
-        <div class="swiper-slide" style="background-image: url('{{img.url}}');">
+        <div class="swiper-slide bg-img-content" style="background-image: url('{{img.url}}');">
           <div class="carousel-container text-uppercase text-center">
             <span class="p-content animate__animated animate__fadeInUp">{{ block.value.description }}</span>
             <a href="{{block.value.page.url}}"
