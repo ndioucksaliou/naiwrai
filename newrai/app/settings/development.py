@@ -18,7 +18,7 @@ ALLOWED_HOSTS = [DOMAIN]
 
 CSRF_TRUSTED_ORIGINS = [f"https://{DOMAIN}"]
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_BACKEND = "django_ses.SESBackend"
 
 
 sentry_sdk.init(
@@ -57,3 +57,6 @@ AWS_QUERYSTRING_AUTH = False
 AWS_DEFAULT_ACL = "public-read"
 
 AWS_S3_FILE_OVERWRITE = False
+
+AWS_SES_REGION_NAME = 'eu-central-1'
+AWS_SES_REGION_ENDPOINT = 'email.eu-central-1.amazonaws.com'
