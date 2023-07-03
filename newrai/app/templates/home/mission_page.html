@@ -6,10 +6,10 @@
     <!-- ======= Why Us Section ======= -->
     <section class="why-us">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" date-aos-delay="200">
-                <h1>{{self.title}}</h1>
-            </div>
             <div class="row padding-row">
+                <div class="section-title" data-aos="fade-up" date-aos-delay="200">
+                    <h1>{{self.title}}</h1>
+                </div>
                 <div class="col-lg-6 video-box d-flex justify-content-center ">
                     {% image self.image fill-546x410 as img %}
                     <img src="{{img.url}}" class="img-fluid" alt="{{self.title}}">
