@@ -345,11 +345,6 @@ h6,
 	font-weight: 900;
 }
 
-.btn-plus {
-	font-size: 23px;
-	font-weight: 900;
-}
-
 #hero {
 	width: 100%;
 	overflow: hidden;
@@ -404,10 +399,10 @@ h6,
 #hero .btn-get-started {
 	/* font-family: "Raleway", sans-serif; */
 	font-weight: 900;
-	font-size: 24px;
+	font-size: 10px;
 	letter-spacing: 1px;
 	display: inline-block;
-	padding: 12px 32px;
+	padding: 9px 20px;
 	border-radius: 50px;
 	transition: 0.5s;
 	line-height: 1;
