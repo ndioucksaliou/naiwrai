@@ -135,7 +135,6 @@ h6,
 	align-items: center;
 	justify-content: space-between;
 	padding: 10px 0 10px 30px;
-	font-family: "Open Sans", sans-serif;
 	font-size: 14px;
 	color: #fff;
 	white-space: nowrap;
@@ -1103,7 +1102,6 @@ section {
 }
 
 .btn-content {
-	font-family: 'Open Sans', sans-serif;
 	font-weight: inherit;
 	font-style: inherit;
 }
@@ -1398,13 +1396,11 @@ button[type=submit]:hover {
 #form-mandatory {
 	font-size: 13px;
 	margin-left: 5px;
-	font-family: "Open Sans", sans-serif;
 	color: #115473;
 }
 
 #form-footer-mandatory {
 	color: #115473;
-	font-family: "Open Sans", sans-serif;
 	font-size: 12px;
 	display: block;
 	margin-top: 20px;
@@ -1436,7 +1432,6 @@ button[type=submit]:hover {
 
 #label-content {
 	color: #115473;
-	font-family: "Open Sans", sans-serif;
 	font-size: 14px;
 	margin-bottom: 8px;
 }
