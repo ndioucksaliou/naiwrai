@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <form action="{% pageurl page %}" method="POST" class="bg-form">
+                    <form action="{% pageurl page %}" method="post" novalidate class="bg-form">
                         {% csrf_token %}
                         <div class="row mt-3">
                             <div class="col-md-6 col-sm-6 mb-3 form-group">
@@ -63,11 +63,11 @@
                                 <textarea class="form-control" required name="message" rows="5"
                                     value="{{ form.message.value }}" placeholder="Message"></textarea>
                             </div>
-                            <div class="text-center mt-3">
-                                <button type="submit" class="btn btn-success">
-                                    envoyer le message
-                                </button>
-                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-success">
+                                envoyer le message
+                            </button>
                         </div>
                     </form>
                 </div>

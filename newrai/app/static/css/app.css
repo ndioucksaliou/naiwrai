@@ -329,7 +329,7 @@ h6,
   # Hero Section
   --------------------------------------------------------------*/
 .text-format {
-	text-transform: capitalize;
+	text-transform: uppercase;
 }
 
 .padding-img-carousel {
@@ -1093,6 +1093,24 @@ section {
 .swiper-pagination-bullet-active {
 	color: #fff;
 	background: #007aff;
+}
+
+/*--------------------------------------------------------------
+# Sections newsletter
+--------------------------------------------------------------*/
+.flex-span {
+	display: flex;
+	flex-direction: row;
+}
+
+.btn-content {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: inherit;
+	font-style: inherit;
+}
+
+.marge-button {
+	margin: 0px;
 }
 
 /*--------------------------------------------------------------

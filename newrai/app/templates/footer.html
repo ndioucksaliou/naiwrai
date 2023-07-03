@@ -104,29 +104,29 @@
           'Vous allez recevoir un email', 'Vous devrez cliquer sur le lien de confirmation pour valider votre inscription', 'Erreur',
           'Une erreur inattendue s%27est produite.', 'Le formulaire est en cours d%27édition, veuillez patienter quelques minutes avant d%27essayer à nouveau.', '',
           '', ''
-        );
+          );
         return false;" method="post">
-          <span style="display: flex;flex-direction: row;">
+          <span class="flex-span">
             <label id="label-content">Pr&eacute;nom</label>
             <div id="form-mandatory">*</div>
           </span>
           <input id="input-form" type="text" name="FIRSTNAME_ID" required="true" sb-form-input>
 
-          <span style="display: flex;flex-direction: row;">
+          <span class="flex-span">
             <label id="label-content">Nom</label>
             <div id="form-mandatory">*</div>
           </span>
           <input id="input-form" type="text" name="LASTNAME_ID" required="true" sb-form-input>
 
-          <span style="display: flex;flex-direction: row;">
+          <span class="flex-span">
             <label id="label-content">Email</label>
             <div id="form-mandatory">*</div>
           </span>
           <input id="input-form" type=" email" name="email" required="true" sb-form-input>
           <div id="div-submitInput" align="right">
-            <div class="loader" style="display:none"></div>
-            <button id="submitInput" type="submit" value="VALIDER" class="mobile-FW"><span style="margin:0px;"><span
-                  style="font-family:'Open Sans',sans-serif;font-weight:inherit;font-style:inherit;">VALIDER</span></span>
+            <div class="loader d-none"></div>
+            <button id="submitInput" type="submit" value="VALIDER" class="mobile-FW"><span class="marge-button"><span
+                  class="btn-content">VALIDER</span></span>
             </button>
           </div>
           <label id="form-footer-mandatory">* Champs obligatoires</label>
