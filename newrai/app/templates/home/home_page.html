@@ -30,7 +30,7 @@
     <section class="why-us section-bg">
         <div class="container">
             <div class="row padding-row">
-                <div class="col-lg-6 video-box d-flex justify-content-center animate__animated animate__fadeInUp">
+                <div class="col-lg-6 video-box d-flex justify-content-center animate__animated animate__fadeInUp mb-5">
                     {% image self.home_image_mission fill-546x410 as img %}
                     <img src="{{img.url}}" class="img-fluid" alt="{{self.home_title_mission}}">
                     <span class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true" data-bs-toggle="modal"
@@ -86,7 +86,7 @@
     <section class="features" data-aos="fade-up" date-aos-delay="200">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 d-flex justify-content-center">
+                <div class="col-md-5 d-flex justify-content-center mb-5">
                     {% image self.home_image_vision fill-600x500 as img %}
                     <img src="{{img.url}}" class="img-fluid" alt="{{self.home_title_vision}}">
                 </div>
@@ -100,12 +100,13 @@
                 </div>
             </div>
         </div>
-    </section><!-- End Features Section -->
+    </section>
+    <!-- End Features Section -->
     <!-- Begin Commitment section  -->
     <section class="features section-bg" data-aos="fade-up" date-aos-delay="200">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 order-1 order-md-2 d-flex justify-content-center">
+                <div class="col-md-5 order-1 order-md-2 d-flex justify-content-center mb-5">
                     {% image self.home_image_commitment fill-600x500 as img %}
                     <img src="{{img.url}}" class="img-fluid" alt="{{self.home_title_commitment}}">
                 </div>
@@ -145,7 +146,7 @@
     <!-- Why Choose Newrai section  -->
     <section class="section-bg" data-aos="fade-up" date-aos-delay="200">
         <div class="container">
-            <h2 class="text-center mb-4">{{self.why_choose_newrai_intro}}</h2>
+            <h2 class="text-center mb-5">{{self.why_choose_newrai_intro}}</h2>
             <div class="row">
                 <div class="col-md-12">
                     <div class="row row-cols-2 row-cols-md-4">
