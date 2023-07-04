@@ -1350,12 +1350,17 @@ button[type=submit]:hover {
 #footer button {
 	font-size: 18px;
 	margin: 0 0 20px 0;
-	padding: 0;
 	line-height: 1;
 	font-weight: 600;
 	list-style: none;
 	text-decoration: none;
 	color: #a2cce3;
+}
+
+.btn-border {
+	padding: 9px 20px;
+	border-radius: 50px;
+	border: 2px solid #ddd;
 }
 
 #footer .footer-newsletter form {
