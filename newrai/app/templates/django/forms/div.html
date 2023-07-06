@@ -1,0 +1,40 @@
+{{ errors }}
+{% if errors and not fields %}
+  <div>{% for field in hidden_fields %}{{ field }}{% endfor %}</div>
+{% endif %}
+{% for field, errors in fields %}
+    {% if field.widget_type == 'textarea' %}
+        <div class="col-md-12 form-group mt-3">
+            <textarea 
+                class="form-control" 
+                rows="5"
+                {% if field.field.required %}required{% endif %}
+                name="{{ field.html_name }}"
+                id="{{ field.id_for_label }}" 
+                
+                placeholder="{{ field.label }}" 
+            ></textarea>
+        </div>
+    {% else %}
+        <div class="col-md-6 form-group mt-3">
+            <input 
+                class="form-control"
+                type="{{ field.widget_type }}" 
+                {% if field.field.required %}required{% endif %}
+                name="{{ field.html_name }}" 
+                id="{{ field.id_for_label }}" 
+                value="{{ form.email.value }}" 
+                maxlength="{{ field.field.max_length }}" 
+                placeholder="{{ field.label }}">
+        </div>
+    {% endif %}
+    {{ field.field_type }}
+    
+    {% if forloop.last %}
+      {% for field in hidden_fields %}{{ field }}{% endfor %}
+    {% endif %}
+
+{% endfor %}
+{% if not fields and not errors %}
+  {% for field in hidden_fields %}{{ field }}{% endfor %}
+{% endif %}
