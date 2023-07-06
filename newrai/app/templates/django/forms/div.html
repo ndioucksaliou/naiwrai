@@ -23,7 +23,7 @@
                 {% if field.field.required %}required{% endif %}
                 name="{{ field.html_name }}" 
                 id="{{ field.id_for_label }}" 
-                value="{{ form.email.value }}" 
+                value="{{ field.value }}" 
                 maxlength="{{ field.field.max_length }}" 
                 placeholder="{{ field.label }}">
         </div>
