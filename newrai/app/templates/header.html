@@ -53,7 +53,8 @@
         {% image block.value.image fill-1500x500-c100 as img %}
         <div class="swiper-slide bg-img-content" style="background-image: url('{{img.url}}');">
           <div class="carousel-container text-uppercase text-center">
-            <span class="p-content animate__animated animate__fadeInUp">{{ block.value.description }}</span>
+            <span class="title-content animate__animated animate__fadeInUp">{{block.value.title}}</span>
+            <p class="p-content animate__animated animate__fadeInUp">{{ block.value.description }}</p>
             <a href="{{block.value.page.url}}"
               class="btn-get-started animate__animated animate__fadeInUp scrollto btn-plus">EN
               SAVOIR + </a>

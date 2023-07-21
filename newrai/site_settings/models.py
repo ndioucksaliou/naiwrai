@@ -25,7 +25,7 @@ class HeaderSettings(BaseSiteSetting):
         [
             ('list_items', blocks.StructBlock(
                 [
-                    ('description', blocks.CharBlock()),
+                    ('title', blocks.CharBlock()),
                     ('description', blocks.RichTextBlock()),
                     ('image', ImageChooserBlock(required=False)),
                     ("page", blocks.PageChooserBlock(required=False)),
