@@ -25,11 +25,12 @@ class HeaderSettings(BaseSiteSetting):
         [
             ('list_items', blocks.StructBlock(
                 [
+                    ('description', blocks.CharBlock()),
                     ('description', blocks.RichTextBlock()),
                     ('image', ImageChooserBlock(required=False)),
                     ("page", blocks.PageChooserBlock(required=False)),
                 ],
-                ),
+            ),
             ),
         ],
         max_num=6,

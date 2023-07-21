@@ -73,7 +73,7 @@ h6,
 }
 
 #header.header-transparent {
-	background: none;
+	background: #115473;
 }
 
 #header.header-scrolled {
@@ -135,7 +135,7 @@ h6,
 	align-items: center;
 	justify-content: space-between;
 	padding: 10px 0 10px 30px;
-	font-size: 14px;
+	font-size: 18px;
 	color: #fff;
 	white-space: nowrap;
 	transition: 0.3s;
@@ -208,6 +208,11 @@ h6,
 	top: 0;
 	left: 100%;
 	visibility: visible;
+}
+
+.social-link {
+	font-size: 30px;
+	color: white;
 }
 
 @media (max-width: 1366px) {

@@ -1,7 +1,7 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
 <header id="header" class="fixed-top d-flex align-items-center header-transparent">
-  <div class="container d-flex justify-content-between align-items-center">
+  <div class="container d-flex justify-content-flex-start align-items-center">
 
     <div class="logo">
       {% if settings.site_settings.HeaderSettings.logo %}
@@ -10,26 +10,33 @@
       {% endif %}
     </div>
 
-    <nav id="navbar" class="navbar">
+    <nav id="navbar" class="navbar mt-3">
       <ul>
-        <li><a class="{% if page.slug == 'home' %}active {% endif %} " href="/">Accueil</a></li>
-        <li><a class="{% if page.slug == 'newrai' %} active {% endif %}" href="/newrai">Newrai</a></li>
+        <li>
+          <a class="{% if page.slug == 'nos-missions' %}active{% endif %} " href="/nos-missions">Transformer mon
+            cabinet
+          </a>
+        </li>
         <li><a class="{% if page.slug == 'applications' %}active{% endif %}" href="/applications">Nos Applications</a>
         </li>
-        <li><a class="{% if page.slug == 'nos-missions' %} active {% endif %}" href="/nos-missions">Nos Missions</a>
         </li>
         <li><a class="{% if page.slug == 'offre' %} active {% endif %}" href="/offre">Nos Offres</a></li>
-        <li><a target="_blank" href="https://blog.newrai.fr/">Blog</a></li>
-        <li class="dropdown"><a href="#"><span>A propos de nous</span> <i class="bi bi-chevron-down"></i></a>
+        <li class="dropdown">
+          <a href="/newrai">
+            <span>New R.a.i</span><i class="bi bi-chevron-down"></i>
+          </a>
           <ul>
-            <li><a class="{% if page.slug == 'notre-vision' %}active{% endif %}" href="/notre-vision">Notre vision</a>
+            <li><a href="#">Qui sommes-nous</a>
             </li>
-            <li><a class="{% if page.slug == 'tetstimonial' %}active {% endif %}" href="/tetstimonial">Témoignages</a>
+            <li><a href="#">Rejoindre NewRai</a>
             </li>
-            <li><a href="#">Facture électronique</a></li>
           </ul>
         </li>
+        <li><a target="_blank" href="https://blog.newrai.fr/">Blog</a></li>
         <li><a class="{% if page.slug == 'contact' %}active {% endif %}" href="/contact">Nous Contacter</a></li>
+        <li>
+          <a href="#" target="_blank"><i class="bi bi-linkedin" style="font-size: 30px; color: white;"></i></a>
+        </li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
