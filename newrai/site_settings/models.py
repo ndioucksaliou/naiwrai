@@ -1,7 +1,7 @@
 from django.db import models
 from wagtail.models import Page
 from wagtail import blocks
-from wagtail.admin.panels import FieldPanel
+from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 from wagtail.fields import StreamField
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.contrib.settings.models import (
@@ -41,4 +41,24 @@ class HeaderSettings(BaseSiteSetting):
     content_panels = Page.content_panels + [
         FieldPanel("logo"),
         FieldPanel("carousel_item"),
+    ]
+
+
+@register_setting
+class SocialMediaSettings(BaseSiteSetting):
+    """The social Media Settings"""
+    facebook = models.URLField(
+        max_length=100, blank=True, null=True, help_text="FaceBook URL"
+    )
+    linkedin = models.URLField(
+        max_length=100, blank=True, null=True, help_text="LinkedIn URL"
+    )
+    panels = [
+        MultiFieldPanel(
+            [
+                FieldPanel("facebook"),
+                FieldPanel("linkedin"),
+            ],
+            heading="Social Media Settings",
+        )
     ]
