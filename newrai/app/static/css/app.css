@@ -407,13 +407,11 @@ h6,
 }
 
 #hero .btn-get-started {
-	/* font-family: "Raleway", sans-serif; */
-	font-weight: 900;
 	font-size: 20px;
 	letter-spacing: 1px;
 	display: inline-block;
 	padding: 9px 20px;
-	border-radius: 50px;
+	border-radius: 10px;
 	transition: 0.5s;
 	line-height: 1;
 	margin: 10px;
